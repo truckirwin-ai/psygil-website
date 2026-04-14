@@ -466,7 +466,15 @@ code {
 .price-card .tier-sub {
   color: var(--text-secondary);
   font-size: 0.88rem;
-  margin-bottom: 22px;
+  margin-bottom: 12px;
+}
+.price-card .tier-desc {
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin: 0 0 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
 }
 .price-card .price {
   display: flex;
