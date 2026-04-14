@@ -1170,10 +1170,10 @@ code {
 }
 .hero-flow-step .num {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
+  font-size: 0.88rem;
+  letter-spacing: 0.12em;
   color: var(--brand);
-  font-weight: 600;
+  font-weight: 800;
 }
 .hero-flow-step .label {
   font-weight: 700;
