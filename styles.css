@@ -1212,11 +1212,12 @@ code {
   margin-top: 18px;
 }
 .hero-tagline {
-  font-size: 1.05rem;
+  font-size: 1.35rem;
   color: #ffffff;
-  opacity: 0.92;
+  opacity: 0.95;
   margin: 0;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: -0.005em;
 }
 
 .hero-bleed .hero-cta {
