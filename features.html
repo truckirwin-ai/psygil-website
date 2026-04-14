@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Features | Psygil</title>
-  <meta name="description" content="Decision gates, evidence maps, structured intake, cryptographic attestation, offline PII detection, and court-ready discovery. Every feature of Psygil put in service of the clinician's judgment.">
+  <meta name="description" content="Decision gates, evidence maps, structured intake, cryptographic attestation, offline PII detection, and discoverable records. Every feature of Psygil put in service of the clinician's judgment.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,9 +29,21 @@
   </div>
 </header>
 
+<nav class="anchor-rail" aria-label="Feature sections">
+  <div class="container anchor-rail-inner">
+    <a href="#gate" class="accent">The gate</a>
+    <a href="#intake">Intake</a>
+    <a href="#testing">Testing</a>
+    <a href="#interviews">Interviews</a>
+    <a href="#reports">Reports</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#discovery">Discoverable record</a>
+  </div>
+</nav>
+
 <main>
 
-<section class="hero" style="padding: 80px 0 40px;">
+<section class="hero" style="padding: 64px 0 32px;">
   <div class="container">
     <span class="hero-eyebrow">Features</span>
     <h1>Every feature is in service of clinical judgment.</h1>
@@ -41,18 +53,18 @@
   </div>
 </section>
 
-<section class="section" style="padding-top: 0;">
+<section class="section" style="padding: 16px 0 48px;">
   <div class="container">
 
-    <div class="feature-row">
+    <div class="thesis" id="gate">
       <div>
-        <span class="kicker">The gate</span>
-        <h3>Decision gates stop the AI from diagnosing</h3>
-        <p>The Diagnostician agent reads everything the clinician has gathered and proposes an evidence map. For every diagnosis it considers relevant, it shows the DSM-5-TR criteria, the ICD-10 code, and the supporting quotes pulled from the case file.</p>
-        <p>The agent does not diagnose. The clinician renders, defers, or rejects. The clinician can add diagnoses the agent missed. The clinician can override the agent on every line. Reasoning is captured in a clinical notes field, timestamped, signed, and written to the audit log.</p>
-        <p><strong>The Writer agent refuses to run until at least one diagnosis has been rendered.</strong> There is no skip. There is no AI-only path. The doctor diagnoses, or the report does not exist.</p>
+        <span class="thesis-eyebrow">The gate</span>
+        <h2>Decision gates stop the AI from diagnosing</h2>
+        <p>The Diagnostician agent reads everything the clinician has gathered and proposes an evidence map. For every diagnosis it considers relevant, it shows the DSM-5-TR criteria, the ICD-10 code, and the supporting quotes pulled from the case file. The agent does not diagnose.</p>
+        <p>The clinician renders, defers, or rejects. The clinician can add diagnoses the agent missed. The clinician can override on every line. Reasoning is captured in a clinical notes field, timestamped, signed, and written to the audit log.</p>
+        <p><strong>The Writer agent refuses to run until at least one diagnosis has been rendered.</strong> No skip. No AI-only path. The doctor diagnoses, or the report does not exist.</p>
       </div>
-      <div class="feature-visual">
+      <div class="feature-visual" style="margin:0;">
         <div class="evidence-mock">
           <div style="margin-bottom:10px;color:var(--text);font-weight:600;">Evidence Map, Diagnostician</div>
           <div class="dx">
@@ -86,101 +98,61 @@
       </div>
     </div>
 
-    <div class="feature-row reverse">
-      <div>
-        <span class="kicker">Structured intake</span>
+    <div class="feature-pair-label">The pipeline, stage by stage</div>
+
+    <div class="feature-pair">
+
+      <article class="feature-pair-card" id="intake">
+        <span class="kicker">01 Intake</span>
         <h3>The case begins where a real evaluation begins</h3>
-        <p>A structured intake opens the moment a new case is created. Identity. Insurance. Court information. Charges. Referral question. Legal history. Family history. Medical history. Substance use. Presenting complaints. Recent events.</p>
-        <p>The clinician fills it in, not the AI. Psygil never guesses at facts the clinician has not entered. Every field is typed, every entry is timestamped, and every value is discoverable by the downstream agents and the eventual reviewer.</p>
-      </div>
-      <div class="feature-visual">
-        <div class="evidence-mock" style="font-size:0.8rem;">
-          <div style="color:var(--text);font-weight:600;margin-bottom:10px;">New Case | Intake</div>
-          <div style="display:grid;grid-template-columns:140px 1fr;gap:6px 16px;line-height:1.8;">
-            <span>Last name</span><span style="color:var(--text);">Doe</span>
-            <span>First name</span><span style="color:var(--text);">Jane</span>
-            <span>Date of birth</span><span style="color:var(--text);">1987-03-12</span>
-            <span>Referral source</span><span style="color:var(--text);">Cook County Public Defender</span>
-            <span>Referral question</span><span style="color:var(--text);">Competency to stand trial</span>
-            <span>Charges</span><span style="color:var(--text);">720 ILCS 5/12-3.2</span>
-          </div>
-          <div style="margin-top:14px;font-size:0.72rem;color:var(--accent-muted);">
-            Clinician input, entered manually
-          </div>
+        <p>A structured intake opens the moment a new case is created. Identity, insurance, referral source, referral question, charges or claim, legal history, family history, medical history, substance use, presenting complaints. The clinician fills it in, not the AI. Every field is typed, every entry is timestamped.</p>
+        <div class="mini-mock">
+          <div class="row"><span class="k">Referral source</span><span class="v">Cook County Public Defender</span></div>
+          <div class="row"><span class="k">Referral question</span><span class="v">Competency to stand trial</span></div>
+          <div class="row"><span class="k">DOB</span><span class="v">1987-03-12</span></div>
+          <div class="row"><span class="k">Entered by</span><span class="v accent">Clinician, manually</span></div>
         </div>
-      </div>
-    </div>
+      </article>
 
-    <div class="feature-row">
-      <div>
-        <span class="kicker">Testing</span>
+      <article class="feature-pair-card" id="testing">
+        <span class="kicker">02 Testing</span>
         <h3>The clinician picks the tests. The clinician scores the tests</h3>
-        <p>Psygil tracks every instrument administered, who scored it, when, and the result. For competency, that might mean the ECST-R and the MacCAT-CA. For risk, the HCR-20 or the Static-99R.</p>
-        <p>The AI does not pick the tests. The AI does not score the tests. The Ingestor agent reads referral letters, prior evaluations, medical records, and police reports, and produces a structured summary the clinician reviews before testing begins. From there, the decisions are the clinician's.</p>
-      </div>
-      <div class="feature-visual">
-        <div class="evidence-mock" style="font-size:0.8rem;">
-          <div style="color:var(--text);font-weight:600;margin-bottom:10px;">Test Battery</div>
-          <div style="display:grid;grid-template-columns:1fr auto;gap:8px 16px;">
-            <span style="color:var(--text);">ECST-R</span><span class="code">Administered 2026-03-12</span>
-            <span style="color:var(--text);">MacCAT-CA</span><span class="code">Administered 2026-03-12</span>
-            <span style="color:var(--text);">MMPI-2-RF</span><span class="code">Administered 2026-03-14</span>
-            <span style="color:var(--text);">PAI</span><span class="code">Administered 2026-03-14</span>
-          </div>
-          <div style="margin-top:14px;font-size:0.72rem;color:var(--accent-muted);">
-            Scoring by clinician. Results saved to audit log.
-          </div>
+        <p>Psygil tracks every instrument administered, who scored it, when, and the result. For forensic, that might mean ECST-R and MacCAT-CA. For clinical, PAI, MMPI-2-RF, BDI-II, WAIS-IV. The Ingestor agent summarizes prior records before testing begins. From there, the decisions are the clinician's.</p>
+        <div class="mini-mock">
+          <div class="row"><span class="k">ECST-R</span><span class="v">Administered 2026-03-12</span></div>
+          <div class="row"><span class="k">MacCAT-CA</span><span class="v">Administered 2026-03-12</span></div>
+          <div class="row"><span class="k">MMPI-2-RF</span><span class="v">Administered 2026-03-14</span></div>
+          <div class="row"><span class="k">Scoring</span><span class="v accent">Clinician</span></div>
         </div>
-      </div>
-    </div>
+      </article>
 
-    <div class="feature-row reverse">
-      <div>
-        <span class="kicker">Interviews</span>
+      <article class="feature-pair-card" id="interviews">
+        <span class="kicker">03 Interviews</span>
         <h3>Psygil does not sit in. Psygil keeps the record</h3>
-        <p>Psygil does not record audio. The clinician meets the defendant face to face, then enters structured mental status observations, behavioral notes, the defendant's account, and responses to competency or insanity questioning.</p>
-        <p>Every observation lives in one place. Every quote is tied back to the date and context it was recorded. When opposing counsel issues a discovery request, the clinician can produce the underlying record in minutes, not days.</p>
-      </div>
-      <div class="feature-visual">
-        <div class="evidence-mock" style="font-size:0.8rem;">
-          <div style="color:var(--text);font-weight:600;margin-bottom:10px;">MSE | Interview 1</div>
-          <div style="display:grid;grid-template-columns:140px 1fr;gap:6px 16px;line-height:1.8;">
-            <span>Appearance</span><span style="color:var(--text);">Appropriate grooming</span>
-            <span>Behavior</span><span style="color:var(--text);">Cooperative, calm</span>
-            <span>Speech</span><span style="color:var(--text);">Normal rate, volume, prosody</span>
-            <span>Mood</span><span style="color:var(--text);">"Tired, worried"</span>
-            <span>Affect</span><span style="color:var(--text);">Congruent, full range</span>
-            <span>Thought process</span><span style="color:var(--text);">Linear, goal-directed</span>
-          </div>
-          <div style="margin-top:14px;font-size:0.72rem;color:var(--accent-muted);">
-            Every field discoverable. Every quote timestamped.
-          </div>
+        <p>Psygil does not record audio. The clinician meets the examinee face to face, then enters structured mental status observations, behavioral notes, the examinee's account, and responses to competency, insanity, or clinical questioning. Every quote is tied to the date and context it was recorded.</p>
+        <div class="mini-mock">
+          <div class="row"><span class="k">Appearance</span><span class="v">Appropriate grooming</span></div>
+          <div class="row"><span class="k">Speech</span><span class="v">Normal rate, volume</span></div>
+          <div class="row"><span class="k">Mood</span><span class="v">"Tired, worried"</span></div>
+          <div class="row"><span class="k">Thought process</span><span class="v">Linear, goal-directed</span></div>
         </div>
-      </div>
-    </div>
+      </article>
 
-    <div class="feature-row">
-      <div>
-        <span class="kicker">Reports</span>
+      <article class="feature-pair-card" id="reports">
+        <span class="kicker">04 Reports</span>
         <h3>Writer drafts. Editor checks. Clinician signs</h3>
-        <p>With the clinical decisions made, the Writer agent drafts the report. It pulls language from the clinician's intake, the structured interview notes, the test results, and only the diagnoses the clinician has personally rendered.</p>
-        <p>The Editor agent reviews the draft for internal consistency, tone, and citation accuracy. The clinician reviews, edits language they disagree with, and attests. Attestation is a cryptographically signed, timestamped event tied to the clinician's identity. The report is locked. The audit log records every change from intake to signature.</p>
-      </div>
-      <div class="feature-visual">
-        <div class="evidence-mock" style="font-size:0.8rem;">
-          <div style="color:var(--text);font-weight:600;margin-bottom:10px;">Attestation</div>
-          <div style="color:var(--text-secondary);">Clinician: <span style="color:var(--text);">Dr. M. Reed, Ph.D.</span></div>
-          <div style="color:var(--text-secondary);">License: <span style="color:var(--text);">IL-072-45XXX</span></div>
-          <div style="color:var(--text-secondary);">Report hash: <span class="code">sha256:7a9b4c1e...</span></div>
-          <div style="color:var(--text-secondary);">Signed at: <span class="code">2026-04-14T09:17:33Z</span></div>
-          <div style="margin-top:14px;font-size:0.72rem;color:var(--accent-muted);">
-            Cryptographically attested. Audit log immutable after close.
-          </div>
+        <p>With the clinical decisions made, the Writer agent drafts the report. It pulls from the clinician's intake, interview notes, test results, and only the diagnoses the clinician has personally rendered. The Editor reviews for internal consistency and citation accuracy. The clinician attests. The report is locked.</p>
+        <div class="mini-mock">
+          <div class="row"><span class="k">Clinician</span><span class="v">Dr. M. Reed, Ph.D.</span></div>
+          <div class="row"><span class="k">License</span><span class="v">IL-072-45XXX</span></div>
+          <div class="row"><span class="k">Signed at</span><span class="v">2026-04-14T09:17:33Z</span></div>
+          <div class="row"><span class="k">Report hash</span><span class="v accent">sha256:7a9b4c1e...</span></div>
         </div>
-      </div>
+      </article>
+
     </div>
 
-    <div class="feature-row reverse">
+    <div class="feature-row" id="privacy">
       <div>
         <span class="kicker">Privacy and PII</span>
         <h3>Names never leave the laptop</h3>
@@ -201,12 +173,12 @@
       </div>
     </div>
 
-    <div class="feature-row">
+    <div class="feature-row reverse" id="discovery">
       <div>
-        <span class="kicker">Discoverability</span>
+        <span class="kicker">Discoverable record</span>
         <h3>Every decision, reproducible on demand</h3>
         <p>Every field entered, every test scored, every record ingested, every agent run, every diagnosis rendered, every draft revision, and every signature is written to an append-only audit log.</p>
-        <p>When a case ends up in court, the clinician can export a testimony package that includes the intake, test raw scores, interview notes, source documents, agent outputs, clinical decisions with rationale, report revisions, and cryptographic hashes for every file involved. Cross-examination becomes a matter of reading the record, not reconstructing it.</p>
+        <p>When a case goes to court, or a payer audits a clinical evaluation, the clinician exports a package that includes the intake, test raw scores, interview notes, source documents, agent outputs, clinical decisions with rationale, report revisions, and cryptographic hashes for every file. Cross-examination becomes a matter of reading the record, not reconstructing it.</p>
       </div>
       <div class="feature-visual">
         <div class="evidence-mock" style="font-size:0.8rem;">
