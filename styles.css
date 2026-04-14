@@ -362,18 +362,10 @@ code {
   background: var(--accent);
   color: var(--accent-on);
 }
-.pipeline-step.gate::after {
-  content: 'PRIMARY GATE';
-  position: absolute;
-  top: -10px;
-  right: 10px;
+.pipeline-step.gate .owner {
   background: var(--accent);
   color: var(--accent-on);
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  padding: 3px 7px;
-  border-radius: 3px;
+  border-color: var(--accent);
 }
 .pipeline-step {
   cursor: default;
