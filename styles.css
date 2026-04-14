@@ -330,10 +330,16 @@ code {
   display: block;
 }
 .pipeline-step .owner {
-  font-size: 0.78rem;
+  display: inline-block;
+  font-size: 0.72rem;
   color: var(--accent);
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border: 1.5px solid var(--accent);
+  border-radius: 4px;
+  padding: 4px 10px;
+  margin-top: 4px;
+  background: var(--accent-soft);
 }
 .pipeline-step:not(:last-child)::before {
   content: '';
