@@ -1,0 +1,31 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local preview
+.cache/
+dist/
+.next/
+out/
+node_modules/
+
+# Cloudflare
+.wrangler/
+
+# Env
+.env
+.env.local
+.env.*.local

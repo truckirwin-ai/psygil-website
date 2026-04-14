@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pricing | Psygil</title>
+  <meta name="description" content="Solo, Practice, and Enterprise licenses for Psygil. Perpetual licenses for the active version. No subscription. No seat meter running in the background.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header-inner">
+    <a class="brand" href="/">
+      <img src="logo.svg" alt="" width="28" height="28">
+      <span>PSYGIL</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="features.html">Features</a>
+      <a href="demo.html">Demo</a>
+      <a href="pricing.html" class="active">Pricing</a>
+      <a href="download.html">Download</a>
+      <a href="pricing.html" class="btn btn-primary">Buy a license</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" style="padding: 80px 0 32px;">
+  <div class="container">
+    <span class="hero-eyebrow">Pricing</span>
+    <h1>Three licenses. Buy once. Use on your terms.</h1>
+    <p class="hero-lede">
+      Psygil is a desktop application the clinician owns. Pick the tier that matches the practice. After purchase, your license key and platform installers are sent to your email.
+    </p>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+
+    <div class="pricing-grid">
+
+      <div class="price-card">
+        <h3>Solo</h3>
+        <div class="tier-sub">One clinician, one workstation</div>
+        <div class="price">
+          <span class="amount">$299</span>
+          <span class="unit">per license</span>
+        </div>
+        <div class="price-sub">One-time. Perpetual for the purchased version.</div>
+        <ul>
+          <li>Full forensic evaluation pipeline, intake through attestation</li>
+          <li>All AI agents: Ingestor, Diagnostician, Writer, Editor</li>
+          <li>Local PII detection with Presidio and spaCy</li>
+          <li>Cryptographic attestation and immutable audit log</li>
+          <li>DSM-5-TR evidence maps with ICD-10 codes</li>
+          <li>Testimony package export</li>
+          <li>Email support</li>
+        </ul>
+        <a href="mailto:sales@psygil.com?subject=Psygil%20Solo%20license" class="btn btn-primary">Buy Solo &nbsp;·&nbsp; $299</a>
+      </div>
+
+      <div class="price-card featured">
+        <h3>Practice</h3>
+        <div class="tier-sub">Up to 5 clinicians, shared workspace</div>
+        <div class="price">
+          <span class="amount">$1,000</span>
+          <span class="unit">for 5 seats</span>
+        </div>
+        <div class="price-sub">One-time. $200 per additional seat.</div>
+        <ul>
+          <li>Everything in Solo</li>
+          <li>Shared intake templates and test batteries</li>
+          <li>Shared report style guide</li>
+          <li>Per-clinician audit trail, reviewable by the practice lead</li>
+          <li>Central license key, per-seat activation</li>
+          <li>Priority email support</li>
+          <li>Onboarding call with the Foundry team</li>
+        </ul>
+        <a href="mailto:sales@psygil.com?subject=Psygil%20Practice%20license" class="btn btn-primary">Buy Practice &nbsp;·&nbsp; $1,000</a>
+      </div>
+
+      <div class="price-card">
+        <h3>Enterprise</h3>
+        <div class="tier-sub">25+ seats, institutional deployment</div>
+        <div class="price">
+          <span class="amount">Custom</span>
+        </div>
+        <div class="price-sub">Volume pricing. BAA and procurement review.</div>
+        <ul>
+          <li>Everything in Practice</li>
+          <li>Named security review contact</li>
+          <li>BAA for institutions that require one</li>
+          <li>SSO integration on request</li>
+          <li>Custom onboarding for evaluator networks</li>
+          <li>Dedicated support contact</li>
+          <li>Procurement-friendly contract terms</li>
+        </ul>
+        <a href="mailto:sales@psygil.com?subject=Psygil%20Enterprise%20inquiry" class="btn btn-secondary">Contact sales</a>
+      </div>
+
+    </div>
+
+    <p class="center dim" style="margin-top: 36px; font-size: 0.9rem;">
+      Need more than 5 seats but not 25? Buy Practice, then add seats at $200 each. Write to
+      <a href="mailto:sales@psygil.com">sales@psygil.com</a>
+      and we will adjust your license.
+    </p>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <span class="kicker">What every license includes</span>
+      <h2>The entire pipeline, on your hardware</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Works offline</h3>
+        <p>The PII detection sidecar runs locally. If you disconnect the laptop from the network, intake, testing, interviews, and audit all keep working. Only remote AI inference requires network, and PII is redacted before any remote call.</p>
+      </div>
+      <div class="card">
+        <h3>Your data, your disk</h3>
+        <p>Case files live in a workspace folder on the clinician's machine. Nothing is stored on a Psygil server because there is no Psygil server for case data. The license server only verifies license keys.</p>
+      </div>
+      <div class="card">
+        <h3>Bring your own model key</h3>
+        <p>Psygil uses the clinician's own Anthropic, OpenAI, or Azure OpenAI key for the Writer, Editor, Ingestor, and Diagnostician agents. API costs are billed to the clinician by the model provider, not by Psygil.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section faq">
+  <div class="container section-narrow">
+    <div class="section-title">
+      <span class="kicker">FAQ</span>
+      <h2>Common questions</h2>
+    </div>
+
+    <details>
+      <summary>Is this a subscription?</summary>
+      <p>No. A Psygil license is a one-time perpetual license for the version you purchased. You keep running that version as long as you want. Major version upgrades are offered as a separate upgrade purchase at a discount for existing license holders.</p>
+    </details>
+
+    <details>
+      <summary>What happens after I pay?</summary>
+      <p>You receive an email with your license key and download links for macOS, Windows, and Linux installers. Activate the app with your key on first launch. Each seat can be activated on one workstation at a time and reassigned if needed.</p>
+    </details>
+
+    <details>
+      <summary>Does Psygil store my case files?</summary>
+      <p>No. Case files are stored in a workspace folder on your machine. The Psygil license server verifies keys and does not receive or store any case data. PII detection runs locally in a sidecar process.</p>
+    </details>
+
+    <details>
+      <summary>What about AI API costs?</summary>
+      <p>The AI agents use your own Anthropic, OpenAI, or Azure OpenAI API key. You pay the model provider directly for inference. A typical full evaluation runs well under one dollar in API charges depending on the provider and model you select.</p>
+    </details>
+
+    <details>
+      <summary>Can I try it before buying?</summary>
+      <p>Write to <a href="mailto:sales@psygil.com">sales@psygil.com</a> with a short note about your practice. We offer a time-limited evaluation license for qualified forensic psychologists and counsel.</p>
+    </details>
+
+    <details>
+      <summary>HIPAA and BAAs</summary>
+      <p>Psygil is a desktop tool. Case data stays on the clinician's device. HIPAA obligations fall on the covered entity or business associate operating the device. For enterprise deployments that require a BAA with Foundry SMB, contact sales. Your model provider (Anthropic, OpenAI, Azure) is a separate BAA relationship you manage with them.</p>
+    </details>
+
+    <details>
+      <summary>Refunds</summary>
+      <p>Licenses are refundable within 30 days of purchase if the software does not work as described. Write to <a href="mailto:support@psygil.com">support@psygil.com</a> with your license key and we will process the refund.</p>
+    </details>
+
+    <details>
+      <summary>Which operating systems are supported?</summary>
+      <p>macOS 12 or later (Apple Silicon and Intel), Windows 10 and 11, and most modern Linux distributions with glibc 2.31 or newer. See the download page for specific installers.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container">
+    <h2>Ready to try it?</h2>
+    <p>Pick a tier, email us, and your license key and installers will be in your inbox the same business day.</p>
+    <div class="cta-buttons">
+      <a href="mailto:sales@psygil.com?subject=Psygil%20license" class="btn btn-primary btn-lg">Buy a license</a>
+      <a href="demo.html" class="btn btn-secondary btn-lg">Watch the demo first</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/">
+          <img src="logo.svg" alt="" width="28" height="28">
+          <span>PSYGIL</span>
+        </a>
+        <p style="margin-top:14px;max-width:320px;">The forensic psychology IDE. Built by Foundry SMB.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="demo.html">Demo</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="download.html">Download</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="mailto:hello@psygil.com">Contact</a></li>
+          <li><a href="mailto:sales@psygil.com">Sales</a></li>
+          <li><a href="mailto:support@psygil.com">Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="mailto:privacy@psygil.com">Privacy</a></li>
+          <li><a href="mailto:legal@psygil.com">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="year">2026</span> Foundry SMB. All rights reserved.</div>
+      <div>Psygil does not diagnose. The clinician diagnoses. Always.</div>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

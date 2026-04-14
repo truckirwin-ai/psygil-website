@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo | Psygil</title>
+  <meta name="description" content="A full Psygil forensic evaluation in five stages. Intake, Testing, Interviews, Diagnostics, and Reports. Watch the decision gates fire.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header-inner">
+    <a class="brand" href="/">
+      <img src="logo.svg" alt="" width="28" height="28">
+      <span>PSYGIL</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="features.html">Features</a>
+      <a href="demo.html" class="active">Demo</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="download.html">Download</a>
+      <a href="pricing.html" class="btn btn-primary">Buy a license</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" style="padding: 80px 0 32px;">
+  <div class="container">
+    <span class="hero-eyebrow">Demo</span>
+    <h1>A full evaluation, in five stages.</h1>
+    <p class="hero-lede">
+      The walkthrough below follows a synthetic competency-to-stand-trial case from referral to attested report. The synthetic case is regenerated on every demo run, so it contains no real PII. The point of the demo is not the content of the case. The point is the gate.
+    </p>
+    <div class="hero-cta">
+      <span class="chip">Total runtime: about 3 minutes 30 seconds</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+
+    <div class="pipeline" style="margin-top: 8px;">
+      <div class="pipeline-step">
+        <span class="num">01</span>
+        <span class="label">Intake</span>
+        <span class="owner">Clinician enters facts</span>
+      </div>
+      <div class="pipeline-step">
+        <span class="num">02</span>
+        <span class="label">Testing</span>
+        <span class="owner">Clinician scores</span>
+      </div>
+      <div class="pipeline-step">
+        <span class="num">03</span>
+        <span class="label">Interviews</span>
+        <span class="owner">Clinician observes</span>
+      </div>
+      <div class="pipeline-step gate">
+        <span class="num">04</span>
+        <span class="label">Diagnostics</span>
+        <span class="owner">Clinician renders</span>
+      </div>
+      <div class="pipeline-step">
+        <span class="num">05</span>
+        <span class="label">Reports</span>
+        <span class="owner">Writer, Editor, sign</span>
+      </div>
+    </div>
+
+    <div class="stepper">
+
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <h3>Intake</h3>
+          <p>Every case begins with the referral. Psygil opens a structured intake the moment a new case is created. Identity. Insurance. Court information. Charges. Referral question. Legal history. Family history. Medical history. Substance use. Presenting complaints. Recent events.</p>
+          <p>The clinician fills it in, not the AI. Psygil never guesses at facts the clinician has not entered. Each field is typed, each value is timestamped, and the structure is preserved so the downstream agents and the eventual reviewer know exactly what was disclosed and when.</p>
+          <span class="meta">~45 SECONDS · WATCH THE FIELD-BY-FIELD TYPING</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <h3>Testing</h3>
+          <p>Once intake is complete, the case enters the Testing stage. The Ingestor agent reads every document the clinician has provided. Referral letters. Prior evaluations. Medical records. Police reports. It produces a structured summary the clinician can review before testing begins.</p>
+          <p>The clinician selects the test battery. For competency, that might be the ECST-R and the MacCAT-CA. For risk, the HCR-20 or the Static-99R. Psygil tracks every instrument administered, who scored it, when, and the result. The AI does not pick the tests. The AI does not score the tests. The clinician does both.</p>
+          <span class="meta">~30 SECONDS · CLINICIAN PICKS AND SCORES</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <h3>Interviews</h3>
+          <p>Interview is where the clinician meets the defendant. Face to face. Psygil does not sit in on the interview and does not record audio. When the interview is complete, the clinician's notes are entered into structured templates. Mental status exam. Behavioral observations. The defendant's account. Responses to competency or insanity questioning.</p>
+          <p>Psygil's role here is record-keeping and discoverability. Every observation lives in one place. Every quote is tied back to the date and context it was recorded. When opposing counsel issues a discovery request, the clinician can produce the underlying record in minutes, not days.</p>
+          <span class="meta">~30 SECONDS · STRUCTURED, DISCOVERABLE NOTES</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">04</div>
+        <div>
+          <h3>Diagnostics <span class="chip" style="margin-left:8px;">The gate</span></h3>
+          <p>The case enters Diagnostics. This is where Psygil's design becomes uncompromising.</p>
+          <p>The Diagnostician agent reads everything the clinician has gathered and proposes an evidence map. For every diagnosis it considers relevant, it shows the DSM-5-TR criteria, the ICD-10 code, and the specific evidence from the case file that supports or contradicts each criterion.</p>
+          <p>The agent does not diagnose. It cannot. It assembles evidence and presents it to the clinician. The clinician, and only the clinician, decides which diagnoses are rendered, which are deferred, and which are rejected. The clinician can add diagnoses the agent missed. The clinician can override the agent on every line. Reasoning is captured in a clinical notes field, timestamped, signed, and written to the audit log.</p>
+          <p><strong>Until the clinician makes at least one diagnostic decision, the Writer agent refuses to run.</strong> There is no skip. There is no AI-only path.</p>
+          <span class="meta">~50 SECONDS · SLOW DOWN. LINGER ON THE GATE</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">05</div>
+        <div>
+          <h3>Reports</h3>
+          <p>With the clinical decisions made, the Writer agent drafts the report. It pulls language from the intake, the structured interview notes, the test results, and only the diagnoses the clinician has personally rendered. The Editor agent reviews the draft for internal consistency, tone, and citation accuracy.</p>
+          <p>The clinician reviews the draft, edits any language they disagree with, and attests. Attestation is a cryptographically signed, timestamped event tied to the clinician's identity. The report is locked. The audit log records every change from intake to signature.</p>
+          <p>If this case ends up in court, the clinician can reproduce the evidentiary chain on demand. Every record. Every test. Every decision. Every revision. Every signature.</p>
+          <span class="meta">~40 SECONDS · WRITER, EDITOR, ATTESTATION</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:64px;padding:32px;background:var(--panel);border:1px solid var(--border);border-radius:var(--radius-lg);">
+      <h3 style="margin-top:0;">Core message</h3>
+      <p style="margin:0;font-size:1.05rem;color:var(--text);line-height:1.65;">
+        Psygil is an evidence engine, not a decision engine. Every diagnostic judgment is made by the licensed clinician. The AI agents read records, organize evidence, and draft language. They never diagnose, and they never sign. <strong>The doctor diagnoses. Always.</strong>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container">
+    <h2>Ready to run your own?</h2>
+    <p>Pick a license tier. Your key and installers arrive in your email the same business day.</p>
+    <div class="cta-buttons">
+      <a href="pricing.html" class="btn btn-primary btn-lg">See pricing</a>
+      <a href="features.html" class="btn btn-secondary btn-lg">Browse all features</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/">
+          <img src="logo.svg" alt="" width="28" height="28">
+          <span>PSYGIL</span>
+        </a>
+        <p style="margin-top:14px;max-width:320px;">The forensic psychology IDE. Built by Foundry SMB.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="demo.html">Demo</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="download.html">Download</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="mailto:hello@psygil.com">Contact</a></li>
+          <li><a href="mailto:sales@psygil.com">Sales</a></li>
+          <li><a href="mailto:support@psygil.com">Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="mailto:privacy@psygil.com">Privacy</a></li>
+          <li><a href="mailto:legal@psygil.com">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="year">2026</span> Foundry SMB. All rights reserved.</div>
+      <div>Psygil does not diagnose. The clinician diagnoses. Always.</div>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
