@@ -36,79 +36,51 @@
 
 <main>
 
-<section class="hero">
-  <div class="container">
-    <span class="hero-eyebrow">The psychology IDE for forensic and clinical work</span>
-    <h1>The clinician diagnoses.<br>The record proves it.</h1>
-    <p class="hero-lede">
-      Psygil is an evidence engine for forensic and clinical psychology. Competency and sanity evaluations, IMEs, disability and capacity assessments, fitness-for-duty, diagnostic consults. AI agents read records, organize evidence, and draft language. They never diagnose, and they never sign. Every clinical conclusion is made, signed, and attested by the licensed clinician, and the full decision trail is reproducible on demand.
-    </p>
-    <div class="hero-cta">
-      <a href="demo.html" class="btn btn-primary btn-lg">Watch the demo</a>
-      <a href="pricing.html" class="btn btn-secondary btn-lg">See pricing</a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-title">
-      <span class="kicker">How it works</span>
-      <h2>A structured pipeline for the work you already do</h2>
-      <p>Psygil mirrors the way a careful evaluation actually flows, forensic or clinical, from referral to signed report. Each stage is enforced in order. The Writer cannot run before the clinician has confirmed a diagnosis. There is no override.</p>
-    </div>
-
-    <div class="pipeline">
-      <div class="pipeline-step">
-        <span class="gate-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L4 5 V11 C4 16 8 20 12 22 C16 20 20 16 20 11 V5 Z"/><path d="M9 12 L11 14 L15 10"/></svg></span>
-        <span class="num">01</span>
-        <span class="label">Intake</span>
-        <span class="owner">Patient Record Gate</span>
-        <span class="tip">Every identifying fact, court detail, and history element must be typed by the clinician before the case can proceed. No guessed fields.</span>
-      </div>
-      <div class="pipeline-step">
-        <span class="gate-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L4 5 V11 C4 16 8 20 12 22 C16 20 20 16 20 11 V5 Z"/><path d="M9 12 L11 14 L15 10"/></svg></span>
-        <span class="num">02</span>
-        <span class="label">Testing</span>
-        <span class="owner">Validity Gate</span>
-        <span class="tip">Every instrument administered and every score is recorded with the scorer, time, and result before the case moves to interview.</span>
-      </div>
-      <div class="pipeline-step">
-        <span class="gate-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L4 5 V11 C4 16 8 20 12 22 C16 20 20 16 20 11 V5 Z"/><path d="M9 12 L11 14 L15 10"/></svg></span>
-        <span class="num">03</span>
-        <span class="label">Interviews</span>
-        <span class="owner">Interview Gate</span>
-        <span class="tip">Structured mental status exam, behavioral observations, and defendant statements are captured in templates before diagnostic review opens.</span>
-      </div>
-      <div class="pipeline-step gate">
-        <span class="gate-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L4 5 V11 C4 16 8 20 12 22 C16 20 20 16 20 11 V5 Z"/><path d="M9 12 L11 14 L15 10"/></svg></span>
-        <span class="num">04</span>
-        <span class="label">Diagnostics</span>
-        <span class="owner">Primary Gate</span>
-        <span class="tip">The clinician must render, defer, or reject each proposed diagnosis, with signed reasoning, before the Writer agent can draft a single line.</span>
-      </div>
-      <div class="pipeline-step">
-        <span class="gate-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L4 5 V11 C4 16 8 20 12 22 C16 20 20 16 20 11 V5 Z"/><path d="M9 12 L11 14 L15 10"/></svg></span>
-        <span class="num">05</span>
-        <span class="label">Reports</span>
-        <span class="owner">Editing &amp; Legal Gate</span>
-        <span class="tip">Editor review, clinician attestation, and cryptographic signature lock the report and seal the audit log for court discovery.</span>
-      </div>
-    </div>
-
-    <p class="center dim" style="margin-top:22px;font-size:0.9rem;">
-      The gate at Diagnostics is the product. Nothing downstream runs without a signed clinical decision.
-    </p>
-  </div>
-</section>
-
-<section class="full-bleed" aria-label="Clinician's office">
+<section class="hero-bleed" aria-label="Psygil pipeline">
   <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=80&auto=format&fit=crop" alt="" loading="lazy">
-  <div class="full-bleed-caption">
+  <div class="hero-bleed-inner">
     <div class="container">
       <span class="eyebrow">The desk where it happens</span>
-      <p class="line">The clinician diagnoses. The record proves it.</p>
-      <p class="sub">Intake, testing, interviews, diagnostics, reports. One workstation. One signed trail.</p>
+      <h1>The clinician diagnoses.<br>The record proves it.</h1>
+
+      <ol class="hero-flow" aria-label="Evaluation pipeline">
+        <li class="hero-flow-step">
+          <span class="num">01</span>
+          <span class="label">Intake</span>
+          <span class="gate">Patient Record Gate</span>
+        </li>
+        <li class="hero-flow-arrow" aria-hidden="true">›</li>
+        <li class="hero-flow-step">
+          <span class="num">02</span>
+          <span class="label">Testing</span>
+          <span class="gate">Validity Gate</span>
+        </li>
+        <li class="hero-flow-arrow" aria-hidden="true">›</li>
+        <li class="hero-flow-step">
+          <span class="num">03</span>
+          <span class="label">Interviews</span>
+          <span class="gate">Interview Gate</span>
+        </li>
+        <li class="hero-flow-arrow is-primary" aria-hidden="true">›</li>
+        <li class="hero-flow-step is-primary">
+          <span class="num">04</span>
+          <span class="label">Diagnostics</span>
+          <span class="gate">Primary Gate</span>
+        </li>
+        <li class="hero-flow-arrow is-primary" aria-hidden="true">›</li>
+        <li class="hero-flow-step is-after-primary">
+          <span class="num">05</span>
+          <span class="label">Reports</span>
+          <span class="gate">Editing &amp; Legal Gate</span>
+        </li>
+      </ol>
+
+      <p class="hero-tagline">One workstation. One audit trail.</p>
+
+      <div class="hero-cta">
+        <a href="demo.html" class="btn btn-primary btn-lg">Watch the demo</a>
+        <a href="pricing.html" class="btn btn-secondary btn-lg">See pricing</a>
+      </div>
     </div>
   </div>
 </section>
