@@ -1,0 +1,32 @@
+{
+  "_comment": "Fulfillment plan flag. Change offer + redeploy to switch plans. The marketing-site scripts read this file at load time and render the matching CTAs.",
+  "offer": "paid_only",
+  "_offer_options": ["paid_only", "trial_first", "both"],
+  "trial_days": 10,
+
+  "copy": {
+    "paid_only": {
+      "hero_primary_cta": "Start subscription",
+      "hero_primary_href": "/pricing.html",
+      "hero_secondary_cta": "Watch the demo",
+      "hero_secondary_href": "/demo.html",
+      "pricing_primary_cta_prefix": "Start"
+    },
+    "trial_first": {
+      "hero_primary_cta": "Download 10-day trial",
+      "hero_primary_href": "/download.html",
+      "hero_secondary_cta": "Watch the demo",
+      "hero_secondary_href": "/demo.html",
+      "pricing_primary_cta_prefix": "Upgrade"
+    },
+    "both": {
+      "hero_primary_cta": "Download 10-day trial",
+      "hero_primary_href": "/download.html",
+      "hero_secondary_cta": "Skip trial, buy now",
+      "hero_secondary_href": "/pricing.html",
+      "pricing_primary_cta_prefix": "Start"
+    }
+  },
+
+  "api_base": "https://api.psygil.com"
+}

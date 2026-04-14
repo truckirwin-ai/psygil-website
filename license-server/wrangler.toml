@@ -1,0 +1,42 @@
+name = "psygil-license"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Route the Worker on your license subdomain, e.g. api.psygil.com
+# Uncomment after DNS is in place.
+# routes = [
+#   { pattern = "api.psygil.com/*", zone_name = "psygil.com" }
+# ]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "psygil-license"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+
+[[r2_buckets]]
+binding = "INSTALLERS"
+bucket_name = "psygil-installers"
+
+[vars]
+ENVIRONMENT = "production"
+APP_URL = "https://psygil.com"
+INSTALLER_URL_TTL_SECONDS = "86400"
+JWT_TTL_SECONDS = "604800"
+TRIAL_DAYS = "10"
+ISSUER = "psygil-license"
+
+# Secrets (set via `wrangler secret put NAME`):
+#   STRIPE_SECRET_KEY
+#   STRIPE_WEBHOOK_SECRET
+#   STRIPE_PRICE_SOLO
+#   STRIPE_PRICE_PRACTICE
+#   STRIPE_PRICE_PRACTICE_EXTRA_SEAT
+#   RESEND_API_KEY
+#   RESEND_FROM_EMAIL
+#   LICENSE_SIGNING_KEY_PRIVATE   (Ed25519 PKCS8, base64, no PEM headers)
+#   LICENSE_SIGNING_KEY_PUBLIC    (Ed25519 SPKI,  base64, no PEM headers)
+#   DOWNLOAD_SIGNING_SECRET       (shared with marketing site's /download Pages Function)
+
+[observability]
+enabled = true
