@@ -1250,7 +1250,7 @@ code {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
-  margin-top: 22px;
+  margin-top: 32px;
 }
 .hero-tagline {
   font-size: 1.35rem;
