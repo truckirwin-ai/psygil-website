@@ -331,7 +331,21 @@ code {
 }
 .pipeline-step .owner {
   font-size: 0.78rem;
-  color: var(--text-secondary);
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.pipeline-step:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid var(--accent);
+  border-right: 2px solid var(--accent);
+  transform: translateY(-50%) rotate(45deg);
+  opacity: 0.75;
 }
 .pipeline-step.gate {
   border-color: var(--accent);
@@ -888,6 +902,7 @@ code {
   }
   .feature-row.reverse .feature-visual { order: 0; }
   .pipeline { grid-template-columns: repeat(2, 1fr); }
+  .pipeline-step:not(:last-child)::before { display: none; }
   .site-footer .footer-grid { grid-template-columns: 1fr 1fr; }
   .nav { gap: 16px; }
   .hero { padding: 64px 0 56px; }
