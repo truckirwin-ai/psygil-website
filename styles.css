@@ -1195,6 +1195,55 @@ code {
 }
 .hero-flow-arrow.is-primary { color: var(--accent); }
 
+.hero-flow-step { position: relative; cursor: default; border-radius: 6px; transition: background-color 0.18s ease; }
+.hero-flow-step:hover,
+.hero-flow-step:focus-visible { background: rgba(255,255,255,0.08); outline: none; }
+.hero-flow-step .tip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 12px);
+  transform: translate(-50%, 4px);
+  width: max-content;
+  max-width: 280px;
+  padding: 10px 12px;
+  background: #1f2328;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-align: left;
+  white-space: normal;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0.18s;
+  z-index: 5;
+}
+.hero-flow-step .tip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #1f2328;
+}
+.hero-flow-step:hover .tip,
+.hero-flow-step:focus-visible .tip,
+.hero-flow-step:focus-within .tip {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0s;
+}
+@media (max-width: 860px) {
+  .hero-flow-step .tip { max-width: 220px; font-size: 0.82rem; }
+}
+
 .hero-footer {
   display: flex;
   align-items: center;

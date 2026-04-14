@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=202604142059">
+  <link rel="stylesheet" href="styles.css?v=202604142105">
 </head>
 <body>
 
@@ -44,29 +44,34 @@
       <h1>The clinician diagnoses.<br>The record proves it.</h1>
 
       <ol class="hero-flow" aria-label="Evaluation pipeline">
-        <li class="hero-flow-step">
+        <li class="hero-flow-step" tabindex="0">
           <span class="title"><span class="num">01</span><span class="label">Intake</span></span>
           <span class="gate">Patient Record Gate</span>
+          <span class="tip" role="tooltip">Every identifying fact, court detail, and history element typed by the clinician before the case can proceed. No guessed fields.</span>
         </li>
         <li class="hero-flow-arrow" aria-hidden="true">›</li>
-        <li class="hero-flow-step">
+        <li class="hero-flow-step" tabindex="0">
           <span class="title"><span class="num">02</span><span class="label">Testing</span></span>
           <span class="gate">Validity Gate</span>
+          <span class="tip" role="tooltip">Every instrument and every score recorded with scorer, time, and result before the case moves to interview.</span>
         </li>
         <li class="hero-flow-arrow" aria-hidden="true">›</li>
-        <li class="hero-flow-step">
+        <li class="hero-flow-step" tabindex="0">
           <span class="title"><span class="num">03</span><span class="label">Interviews</span></span>
           <span class="gate">Interview Gate</span>
+          <span class="tip" role="tooltip">Structured mental status exam, behavioral observations, and statements captured in templates before diagnostic review opens.</span>
         </li>
         <li class="hero-flow-arrow is-primary" aria-hidden="true">›</li>
-        <li class="hero-flow-step is-primary">
+        <li class="hero-flow-step is-primary" tabindex="0">
           <span class="title"><span class="num">04</span><span class="label">Diagnostics</span></span>
           <span class="gate">Primary Gate</span>
+          <span class="tip" role="tooltip">The clinician renders, defers, or rejects each proposed diagnosis, with signed reasoning, before the Writer agent can draft a line.</span>
         </li>
         <li class="hero-flow-arrow is-primary" aria-hidden="true">›</li>
-        <li class="hero-flow-step is-after-primary">
+        <li class="hero-flow-step is-after-primary" tabindex="0">
           <span class="title"><span class="num">05</span><span class="label">Reports</span></span>
           <span class="gate">Editing &amp; Legal Gate</span>
+          <span class="tip" role="tooltip">Editor review, clinician attestation, and cryptographic signature lock the report and seal the audit log for court discovery.</span>
         </li>
       </ol>
 
