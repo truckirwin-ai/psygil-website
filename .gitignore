@@ -30,3 +30,8 @@ psygil-preview.html
 .env
 .env.local
 .env.*.local
+
+# Local dev scratch
+tsconfig.functions.json
+keypair.json
+keypair.*.bak

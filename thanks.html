@@ -1,0 +1,195 @@
+<!doctype html>
+<!-- build: 2026-04-22T00:00:00Z -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thank you | Psygil</title>
+  <meta name="description" content="Your Psygil purchase is complete. Your license key and installer link are on the way to your inbox.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=202604220000">
+  <style>
+    .success-card {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, var(--accent-soft), var(--panel) 70%);
+      box-shadow: var(--shadow-sm);
+    }
+    .success-card h2 { margin: 0; }
+    .success-card .session-id {
+      font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      word-break: break-all;
+    }
+    .next-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+    @media (max-width: 720px) {
+      .next-steps { grid-template-columns: 1fr; }
+    }
+    .next-step {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--panel);
+    }
+    .next-step .step-num {
+      font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .next-step h4 { margin: 0 0 6px; font-size: 1rem; }
+    .next-step p { margin: 0; color: var(--text-secondary); font-size: 0.92rem; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header-inner">
+    <a class="brand" href="/">
+      <img src="logo.svg" alt="" width="28" height="28">
+      <span>PSYGIL</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="features.html">Features</a>
+      <a href="demo.html">Demo</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="enterprise.html">Enterprise</a>
+      <a href="download.html">Download</a>
+      <a href="support.html" class="btn btn-secondary">Get support</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" style="padding: 80px 0 32px;">
+  <div class="container">
+    <span class="hero-eyebrow">Purchase complete</span>
+    <h1>Your Psygil license is on its way.</h1>
+    <p class="hero-lede">
+      Stripe has confirmed your payment. Your signed license key and installer download link are arriving in your inbox in the next minute or two. If the email has not arrived in five minutes, check spam, then write to support.
+    </p>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container section-narrow">
+
+    <div class="success-card">
+      <div>
+        <h2>What happens next</h2>
+        <p style="margin: 8px 0 0; color: var(--text-secondary);">
+          The fulfillment email has three things in it, in order: your license key, a one-click activation link that launches the app and applies the key, and a signed installer download link.
+        </p>
+      </div>
+
+      <div id="session-info" hidden>
+        <span class="session-id">Checkout session: <span id="session-id"></span></span>
+      </div>
+    </div>
+
+    <div class="next-steps">
+      <div class="next-step">
+        <div class="step-num">Step 1</div>
+        <h4>Check your inbox</h4>
+        <p>Look for a message from support@psygil.com with the subject line starting with "Your Psygil license".</p>
+      </div>
+      <div class="next-step">
+        <div class="step-num">Step 2</div>
+        <h4>Download and install</h4>
+        <p>Click the installer download link in the email. The link is signed and expires in 14 days. Run the installer on your workstation.</p>
+      </div>
+      <div class="next-step">
+        <div class="step-num">Step 3</div>
+        <h4>Activate with one click</h4>
+        <p>Click "Activate Psygil now" in the email. The app opens, your license is stored locally in the encrypted workspace, and you are in.</p>
+      </div>
+    </div>
+
+    <div class="form-footer" style="justify-content: center; margin-top: 32px;">
+      <a href="mailto:support@psygil.com" class="btn btn-secondary">Email support</a>
+      <a href="support.html" class="btn btn-ghost">Support center</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/">
+          <img src="logo.svg" alt="" width="28" height="28">
+          <span>PSYGIL</span>
+        </a>
+        <p style="margin-top:14px;max-width:320px;">The psychology IDE for clinical and forensic work. Built by Foundry SMB in Colorado, United States.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="demo.html">Demo</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="enterprise.html">Enterprise</a></li>
+          <li><a href="download.html">Download</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="sales.html">Sales</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="policies.html#privacy">Privacy</a></li>
+          <li><a href="policies.html#terms">Terms</a></li>
+          <li><a href="policies.html">All policies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; <span id="year">2026</span> Foundry SMB LLC. All rights reserved. Colorado, United States.</div>
+      <div>Psygil does not diagnose. The clinician diagnoses. Always.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var sessionId = params.get('session_id');
+  if (sessionId && /^cs_[A-Za-z0-9_]+$/.test(sessionId)) {
+    var wrap = document.getElementById('session-info');
+    var out = document.getElementById('session-id');
+    out.textContent = sessionId;
+    wrap.hidden = false;
+  }
+})();
+</script>
+
+</body>
+</html>
