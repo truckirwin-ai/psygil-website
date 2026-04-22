@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Features | Psygil</title>
-  <meta name="description" content="Decision gates, evidence maps, structured intake, cryptographic attestation, offline PII detection, and discoverable records. Every feature of Psygil put in service of the clinician's judgment.">
+  <meta name="description" content="The decision gate, the evaluation pipeline, testing and validity, interview with live transcription, adversarial Editor review, voice-matched Writer, UNID PHI redaction, tamper-evident audit trail, and court-ready attestation.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=202604142319">
+  <link rel="stylesheet" href="styles.css?v=202604171600">
 </head>
 <body>
 
@@ -23,6 +23,7 @@
       <a href="features.html" class="active">Features</a>
       <a href="demo.html">Demo</a>
       <a href="pricing.html">Pricing</a>
+      <a href="enterprise.html">Enterprise</a>
       <a href="download.html">Download</a>
       <a href="pricing.html" class="btn btn-primary">Start subscription</a>
     </nav>
@@ -32,24 +33,27 @@
 <nav class="anchor-rail" aria-label="Feature sections">
   <div class="container anchor-rail-inner">
     <a href="#gate" class="accent">The gate</a>
-    <a href="#intake">Intake</a>
+    <a href="#pipeline">Pipeline</a>
     <a href="#testing">Testing</a>
-    <a href="#interviews">Interviews</a>
-    <a href="#reports">Reports</a>
+    <a href="#interview">Interview</a>
+    <a href="#editor">Editor</a>
+    <a href="#writer">Writer</a>
     <a href="#privacy">Privacy</a>
-    <a href="#discovery">Discoverable record</a>
+    <a href="#attestation">Attestation</a>
+    <a href="#discovery">Discovery</a>
   </div>
 </nav>
 
 <main>
 
-<section class="hero" style="padding: 64px 0 32px;">
-  <div class="container">
-    <span class="hero-eyebrow">Features</span>
-    <h1>Every feature is in service of clinical judgment.</h1>
-    <p class="hero-lede">
-      Psygil is opinionated. It makes the right thing easy and the wrong thing impossible. AI organizes evidence. The clinician makes every decision the referral, the court, or the payer cares about. Built for forensic work. Rigorous enough for clinical evaluation.
-    </p>
+<section class="full-bleed full-bleed-hero" aria-label="Features">
+  <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=2400&q=80&auto=format&fit=crop" alt="" loading="eager">
+  <div class="full-bleed-caption">
+    <div class="container">
+      <span class="eyebrow">The record, captured</span>
+      <h1>Every instrument. Every score. Every quote. Every observation. Timestamped.</h1>
+      <p class="sub">The clinician picks the tests, scores the tests, conducts the interview, and renders every diagnostic decision. Psygil keeps the record of all of it.</p>
+    </div>
   </div>
 </section>
 
@@ -59,10 +63,9 @@
     <div class="thesis" id="gate">
       <div>
         <span class="thesis-eyebrow">The gate</span>
-        <h2>Decision gates stop the AI from diagnosing</h2>
-        <p>The Diagnostician agent reads everything the clinician has gathered and proposes an evidence map. For every diagnosis it considers relevant, it shows the DSM-5-TR criteria, the ICD-10 code, and the supporting quotes pulled from the case file. The agent does not diagnose.</p>
-        <p>The clinician renders, defers, or rejects. The clinician can add diagnoses the agent missed. The clinician can override on every line. Reasoning is captured in a clinical notes field, timestamped, signed, and written to the audit log.</p>
-        <p><strong>The Writer agent refuses to run until at least one diagnosis has been rendered.</strong> No skip. No AI-only path. The doctor diagnoses, or the report does not exist.</p>
+        <h2>Decision gates keep you in charge of all diagnostics</h2>
+        <p>The diagnostic assistant maps your evidence to DSM-5-TR criteria and surfaces convergent and contradictory findings across test data, interview, and collateral. It does not diagnose.</p>
+        <p>You render, defer, or reject each candidate, with signed reasoning in the audit log. <strong>The writing assistant will not draft a report until you have rendered at least one diagnosis.</strong></p>
       </div>
       <div class="feature-visual" style="margin:0;">
         <div class="evidence-mock">
@@ -92,77 +95,142 @@
             </span>
           </div>
           <div style="margin-top:12px;color:var(--text-secondary);font-size:0.72rem;">
-            Clinical decision required to proceed. Writer agent is blocked.
+            Clinical decision required to proceed. Writing assistant is blocked.
           </div>
         </div>
       </div>
     </div>
 
-    <div class="feature-pair-label">The pipeline, stage by stage</div>
-
-    <div class="feature-pair">
-
-      <article class="feature-pair-card" id="intake">
-        <span class="kicker">01 Intake</span>
-        <h3>The case begins where a real evaluation begins</h3>
-        <p>A structured intake opens the moment a new case is created. Identity, insurance, referral source, referral question, charges or claim, legal history, family history, medical history, substance use, presenting complaints. The clinician fills it in, not the AI. Every field is typed, every entry is timestamped.</p>
-        <div class="mini-mock">
-          <div class="row"><span class="k">Referral source</span><span class="v">Cook County Public Defender</span></div>
-          <div class="row"><span class="k">Referral question</span><span class="v">Competency to stand trial</span></div>
-          <div class="row"><span class="k">DOB</span><span class="v">1987-03-12</span></div>
-          <div class="row"><span class="k">Entered by</span><span class="v accent">Clinician, manually</span></div>
+    <div class="feature-row" id="pipeline" style="margin-top: 64px;">
+      <div>
+        <span class="kicker">Pipeline</span>
+        <h3>Six stages. Gates between every one of them.</h3>
+        <p>Onboarding, Testing, Interview, Diagnostics, Review, Complete. A case cannot reach Diagnostics until your testing is documented. A report cannot publish until you have signed every diagnosis.</p>
+        <p>The ingestion assistant reads referrals, prior evaluations, medical records, and court documents in PDF, DOCX, RTF, CSV, and Markdown. Bulk ingest handles fifty files or more with per-file retry so records keeping stays out of your way.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="evidence-mock" style="font-size:0.82rem;">
+          <div style="color:var(--text);font-weight:600;margin-bottom:10px;">Case pipeline</div>
+          <div style="display:grid;grid-template-columns:auto 1fr auto;gap:6px 12px;align-items:center;">
+            <span class="code">01</span><span>Onboarding</span><span class="pill active">passed</span>
+            <span class="code">02</span><span>Testing</span><span class="pill active">passed</span>
+            <span class="code">03</span><span>Interview</span><span class="pill active">passed</span>
+            <span class="code">04</span><span>Diagnostics</span><span class="pill active">RENDER</span>
+            <span class="code">05</span><span>Review</span><span class="pill">pending</span>
+            <span class="code">06</span><span>Complete</span><span class="pill">locked</span>
+          </div>
+          <div style="margin-top:12px;font-size:0.72rem;color:var(--text-secondary);">
+            Advancement blocked until the stage gate fires.
+          </div>
         </div>
-      </article>
-
-      <article class="feature-pair-card" id="testing">
-        <span class="kicker">02 Testing</span>
-        <h3>The clinician picks the tests. The clinician scores the tests</h3>
-        <p>Psygil tracks every instrument administered, who scored it, when, and the result. For forensic, that might mean ECST-R and MacCAT-CA. For clinical, PAI, MMPI-2-RF, BDI-II, WAIS-IV. The Ingestor agent summarizes prior records before testing begins. From there, the decisions are the clinician's.</p>
-        <div class="mini-mock">
-          <div class="row"><span class="k">ECST-R</span><span class="v">Administered 2026-03-12</span></div>
-          <div class="row"><span class="k">MacCAT-CA</span><span class="v">Administered 2026-03-12</span></div>
-          <div class="row"><span class="k">MMPI-2-RF</span><span class="v">Administered 2026-03-14</span></div>
-          <div class="row"><span class="k">Scoring</span><span class="v accent">Clinician</span></div>
-        </div>
-      </article>
-
-      <article class="feature-pair-card" id="interviews">
-        <span class="kicker">03 Interviews</span>
-        <h3>Psygil does not sit in. Psygil keeps the record</h3>
-        <p>Psygil does not record audio. The clinician meets the examinee face to face, then enters structured mental status observations, behavioral notes, the examinee's account, and responses to competency, insanity, or clinical questioning. Every quote is tied to the date and context it was recorded.</p>
-        <div class="mini-mock">
-          <div class="row"><span class="k">Appearance</span><span class="v">Appropriate grooming</span></div>
-          <div class="row"><span class="k">Speech</span><span class="v">Normal rate, volume</span></div>
-          <div class="row"><span class="k">Mood</span><span class="v">"Tired, worried"</span></div>
-          <div class="row"><span class="k">Thought process</span><span class="v">Linear, goal-directed</span></div>
-        </div>
-      </article>
-
-      <article class="feature-pair-card" id="reports">
-        <span class="kicker">04 Reports</span>
-        <h3>Writer drafts. Editor checks. Clinician signs</h3>
-        <p>With the clinical decisions made, the Writer agent drafts the report. It pulls from the clinician's intake, interview notes, test results, and only the diagnoses the clinician has personally rendered. The Editor reviews for internal consistency and citation accuracy. The clinician attests. The report is locked.</p>
-        <div class="mini-mock">
-          <div class="row"><span class="k">Clinician</span><span class="v">Dr. M. Reed, Ph.D.</span></div>
-          <div class="row"><span class="k">License</span><span class="v">IL-072-45XXX</span></div>
-          <div class="row"><span class="k">Signed at</span><span class="v">2026-04-14T09:17:33Z</span></div>
-          <div class="row"><span class="k">Report hash</span><span class="v accent">sha256:7a9b4c1e...</span></div>
-        </div>
-      </article>
-
+      </div>
     </div>
 
-  </div>
-</section>
-
-<section class="full-bleed" aria-label="A testing session">
-  <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=2400&q=80&auto=format&fit=crop" alt="" loading="lazy">
-  <div class="full-bleed-caption">
-    <div class="container">
-      <span class="eyebrow">The testing session</span>
-      <p class="line">Every instrument. Every score. Every scorer. Timestamped.</p>
-      <p class="sub">Psygil keeps the record of what was administered and when. The clinician picks the tests and scores the tests.</p>
+    <div class="feature-row reverse" id="testing" style="margin-top: 64px;">
+      <div>
+        <span class="kicker">Testing and validity</span>
+        <h3>You pick the tests. You score the tests. Psygil keeps the record.</h3>
+        <p>Clinical battery (MMPI-3, PAI, WAIS-IV, BDI-II, MoCA) and forensic instruments (TOMM, MSVT, PCL-R, ECST-R, MacCAT-CA, HCR-20, Static-99R). Psygil does not score from answer sheets.</p>
+        <p>Validity scales flag automatically. F-r, FBS-r, symptom-validity cutoffs, PAI inconsistency indices. Findings feed the evidence map next to your interview and collateral.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="evidence-mock" style="font-size:0.82rem;">
+          <div style="color:var(--text);font-weight:600;margin-bottom:10px;">Validity flags, MMPI-3</div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <span><span class="code">F-r</span> &nbsp; T = 82 &nbsp; <span class="pill active">REVIEW</span></span>
+            <span><span class="code">FBS-r</span> T = 74 &nbsp; <span class="pill active">REVIEW</span></span>
+            <span><span class="code">TRIN</span> &nbsp; T = 56 &nbsp; within range</span>
+            <span><span class="code">VRIN</span> T = 52 &nbsp; within range</span>
+          </div>
+          <div style="margin-top:12px;font-size:0.72rem;color:var(--text-secondary);">
+            Flags fed into evidence map. Clinician resolves each before Diagnostics opens.
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="feature-row" id="interview" style="margin-top: 64px;">
+      <div>
+        <span class="kicker">Interview and MSE</span>
+        <h3>Live transcript. Structured observations. Nothing leaves the workstation.</h3>
+        <p>Local Whisper transcription streams in 250-millisecond segments. No audio leaves the workstation. You pause, resume, and annotate inline without interrupting the recording.</p>
+        <p>A parallel observation rail captures appearance, psychomotor, eye contact, affect, speech, and rapport. Each field maps to a standard Mental Status Examination section, time-stamped against your transcript.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="evidence-mock" style="font-size:0.82rem;">
+          <div style="color:var(--text);font-weight:600;margin-bottom:10px;">Interview, live</div>
+          <div style="font-family:var(--font-mono);font-size:0.76rem;color:var(--text-secondary);margin-bottom:10px;">
+            00:14:22 &nbsp;<span style="color:var(--text);">"I can usually tell what my attorney is doing, but sometimes when it gets complicated I get lost."</span>
+          </div>
+          <div style="font-family:var(--font-mono);font-size:0.76rem;color:var(--accent);margin-bottom:10px;">
+            00:14:38 &nbsp;[examinee paused, looked down for approximately 20 seconds]
+          </div>
+          <div style="border-top:1px solid var(--border);padding-top:10px;margin-top:10px;">
+            <div style="color:var(--text);font-weight:600;margin-bottom:8px;">MSE observations</div>
+            <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:0.78rem;">
+              <span style="color:var(--text-secondary);">Appearance</span><span>Appropriate grooming</span>
+              <span style="color:var(--text-secondary);">Speech</span><span>Normal rate, volume</span>
+              <span style="color:var(--text-secondary);">Affect</span><span>Congruent, mildly constricted</span>
+              <span style="color:var(--text-secondary);">Thought process</span><span>Linear, goal-directed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="forensic-callout">
+      <span class="label">Forensic work</span>
+      <p>Every quote in the final report is tied to a time-stamped line. Cross-examination reads from the record, not around it.</p>
+    </div>
+
+    <div class="feature-row reverse" id="editor" style="margin-top: 64px;">
+      <div>
+        <span class="kicker">Review assistant</span>
+        <h3>Nine categories. Every flag tied to a paragraph.</h3>
+        <p>The review assistant flags speculative language, unsupported conclusions, Daubert and Frye vulnerability, factual inconsistency, overstatement, missing caveats, source gaps, and diagnostic overreach. Severity-coded, paragraph-pinned.</p>
+        <p>You decide what to revise. The assistant does not rewrite unless you ask.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="evidence-mock" style="font-size:0.82rem;">
+          <div style="color:var(--text);font-weight:600;margin-bottom:10px;">Editor flags</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div><span class="pill active" style="font-size:0.68rem;">HIGH</span> &nbsp; Unsupported conclusion, &para;&nbsp;14</div>
+            <div><span class="pill active" style="font-size:0.68rem;">HIGH</span> &nbsp; Overstatement of certainty, &para;&nbsp;22</div>
+            <div><span class="pill" style="font-size:0.68rem;">MED</span> &nbsp; Missing caveat on base rate, &para;&nbsp;27</div>
+            <div><span class="pill" style="font-size:0.68rem;">MED</span> &nbsp; Source not cited, &para;&nbsp;31</div>
+            <div><span class="pill" style="font-size:0.68rem;">LOW</span> &nbsp; Speculative language, &para;&nbsp;8</div>
+          </div>
+          <div style="margin-top:12px;font-size:0.72rem;color:var(--text-secondary);">
+            Clinician resolves each flag before publication.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-row" id="writer" style="margin-top: 64px;">
+      <div>
+        <span class="kicker">Writing assistant</span>
+        <h3>Your voice. Your vocabulary. Your signed diagnoses.</h3>
+        <p>The writing assistant drafts the report in your voice and style, using your vocabulary, from the diagnoses you have approved and signed. Every section is labeled generated or draft with a confidence score. Sections awaiting upstream stages show placeholders, not prose.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="evidence-mock" style="font-size:0.82rem;">
+          <div style="color:var(--text);font-weight:600;margin-bottom:10px;">Report sections</div>
+          <div style="display:flex;flex-direction:column;gap:6px;font-size:0.78rem;">
+            <span><span class="code">3.1</span> Referral information &nbsp;<span class="pill active">generated</span></span>
+            <span><span class="code">3.2</span> Records reviewed &nbsp;<span class="pill active">generated</span></span>
+            <span><span class="code">4.0</span> Mental status exam &nbsp;<span class="pill">draft, review</span></span>
+            <span><span class="code">5.0</span> Test results &nbsp;<span class="pill active">generated</span></span>
+            <span><span class="code">6.0</span> Diagnostic impression &nbsp;<span class="pill">draft, review</span></span>
+            <span><span class="code">7.0</span> Opinion &nbsp;<span class="pill">pending diagnosis</span></span>
+          </div>
+          <div style="margin-top:12px;font-size:0.72rem;color:var(--text-secondary);">
+            Confidence score on every section. Placeholders for sections that cannot yet be written.
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -171,48 +239,73 @@
 
     <div class="feature-row" id="privacy">
       <div>
-        <span class="kicker">Privacy and PII</span>
-        <h3>Names never leave the laptop</h3>
-        <p>Psygil runs Microsoft Presidio and a spaCy NER model locally in a sidecar process. PII detection, redaction, and rehydration all happen on the clinician's machine. Names, addresses, phone numbers, and identifiers are never sent to a remote service for detection.</p>
-        <p>When the AI agents run against remote model providers, Psygil redacts first and rehydrates on the clinician's side. The upstream model sees tokens, not patients.</p>
+        <span class="kicker">Privacy, UNID redaction, local-first storage</span>
+        <h3>Names never leave the workstation.</h3>
+        <p>Local Presidio and spaCy redact all 18 HIPAA Safe Harbor categories into single-use Universal Non-Identifying Descriptors (UNIDs) before any text leaves the workstation. UNIDs are rehydrated locally on return.</p>
+        <p>Case data lives in a SQLCipher database keyed with Argon2id, stored in the OS keychain (macOS Keychain, Windows DPAPI, Linux libsecret). Nothing caches to cloud, browser, or temp.</p>
       </div>
       <div class="feature-visual">
         <div class="evidence-mock" style="font-size:0.8rem;">
-          <div style="color:var(--text);font-weight:600;margin-bottom:10px;">PII Redaction</div>
+          <div style="color:var(--text);font-weight:600;margin-bottom:10px;">UNID redaction</div>
           <div style="color:var(--text-secondary);margin-bottom:8px;">Source</div>
-          <div style="color:var(--text);background:var(--bg);padding:8px 10px;border-radius:4px;border:1px solid var(--border);margin-bottom:12px;">Jane Doe, DOB 1987-03-12, 415-555-0143, lives at 24 Elm St.</div>
+          <div style="color:var(--text);background:var(--bg);padding:8px 10px;border-radius:4px;border:1px solid var(--border);margin-bottom:12px;">Jane Doe, DOB 1987-03-12, 415-555-0143, MRN 447231.</div>
           <div style="color:var(--text-secondary);margin-bottom:8px;">Sent to model</div>
-          <div style="color:var(--text);background:var(--bg);padding:8px 10px;border-radius:4px;border:1px solid var(--border);">[PERSON_1], DOB [DATE_1], [PHONE_1], lives at [ADDRESS_1].</div>
+          <div style="color:var(--text);background:var(--bg);padding:8px 10px;border-radius:4px;border:1px solid var(--border);">[PERSON_1], DOB [DATE_1], [PHONE_1], MRN [ID_1].</div>
           <div style="margin-top:14px;font-size:0.72rem;color:var(--accent-muted);">
-            Microsoft Presidio + spaCy, running locally. Offline capable.
+            Local Presidio + spaCy. 18 Safe Harbor categories. Offline capable.
           </div>
         </div>
       </div>
     </div>
 
-    <div class="feature-row reverse" id="discovery">
+    <div class="feature-row reverse" id="attestation" style="margin-top: 64px;">
       <div>
-        <span class="kicker">Discoverable record</span>
-        <h3>Every decision, reproducible on demand</h3>
-        <p>Every field entered, every test scored, every record ingested, every agent run, every diagnosis rendered, every draft revision, and every signature is written to an append-only audit log.</p>
-        <p>When a case goes to court, or a payer audits a clinical evaluation, the clinician exports a package that includes the intake, test raw scores, interview notes, source documents, agent outputs, clinical decisions with rationale, report revisions, and cryptographic hashes for every file. Cross-examination becomes a matter of reading the record, not reconstructing it.</p>
+        <span class="kicker">Attestation and sealing</span>
+        <h3>You sign. The report locks. The package is ready.</h3>
+        <p>Attestation captures your typed signature, statement, and date. Psygil hashes the final report with SHA-256, records the hash in the audit trail, archives drafts, and locks the DOCX and PDF to read-only.</p>
+        <p>Reopening a sealed case requires a supervisor override that is itself audited. The exported package meets licensing, payer, professional, and HIPAA documentation standards, and stands up in court.</p>
       </div>
       <div class="feature-visual">
-        <div class="evidence-mock" style="font-size:0.8rem;">
-          <div style="color:var(--text);font-weight:600;margin-bottom:10px;">Testimony Package</div>
-          <div style="display:flex;flex-direction:column;gap:6px;font-size:0.78rem;">
-            <span>intake.pdf &nbsp;·&nbsp; <span class="code">sha256:a1b2...</span></span>
-            <span>test_scores_ECST-R.pdf &nbsp;·&nbsp; <span class="code">sha256:c3d4...</span></span>
-            <span>interview_notes_01.pdf &nbsp;·&nbsp; <span class="code">sha256:e5f6...</span></span>
-            <span>evidence_map.json &nbsp;·&nbsp; <span class="code">sha256:7890...</span></span>
-            <span>report_v3_signed.pdf &nbsp;·&nbsp; <span class="code">sha256:1234...</span></span>
-            <span>audit_log.ndjson &nbsp;·&nbsp; <span class="code">sha256:5678...</span></span>
-          </div>
-          <div style="margin-top:14px;font-size:0.72rem;color:var(--accent-muted);">
-            One zip. Every record. Every decision. Every signature.
+        <div class="evidence-mock" style="font-size:0.82rem;">
+          <div style="color:var(--text);font-weight:600;margin-bottom:10px;">Attestation record</div>
+          <div class="mini-mock" style="margin:0;">
+            <div class="row"><span class="k">Clinician</span><span class="v">Dr. M. Reed, Ph.D.</span></div>
+            <div class="row"><span class="k">License</span><span class="v">IL-072-45XXX</span></div>
+            <div class="row"><span class="k">Signed at</span><span class="v">2026-04-14T09:17:33Z</span></div>
+            <div class="row"><span class="k">Report hash</span><span class="v accent">sha256:7a9b4c1e...</span></div>
+            <div class="row"><span class="k">Status</span><span class="v">SEALED</span></div>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="feature-row" id="discovery" style="margin-top: 64px;">
+      <div>
+        <span class="kicker">Discoverable record, tamper-evident audit</span>
+        <h3>Every decision, reproducible on demand.</h3>
+        <p>Every action writes an immutable entry to an append-only audit log, protected by SQL triggers and chained with SHA-256. Any post-hoc tampering is detectable via the built-in chain verification tool.</p>
+        <p>On request, you export one package: intake, scores, interview, documents, your decisions with rationale, revisions, attestation, and file hashes. Review reads the record rather than reconstructing it.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="evidence-mock" style="font-size:0.8rem;">
+          <div style="color:var(--text);font-weight:600;margin-bottom:10px;">Audit log, tail</div>
+          <div style="display:flex;flex-direction:column;gap:4px;font-size:0.74rem;font-family:var(--font-mono);">
+            <span>2026-04-14T09:17:33Z  attestation.sign   hash:7a9b4c1e prev:d2...</span>
+            <span>2026-04-14T09:16:02Z  report.finalize    hash:d2c3a11f prev:5f...</span>
+            <span>2026-04-14T09:12:44Z  editor.review      hash:5f8e9a02 prev:10...</span>
+            <span>2026-04-14T08:58:11Z  writer.draft       hash:10b7c221 prev:aa...</span>
+            <span>2026-04-14T08:41:26Z  diagnostic.render  hash:aa4e7b90 prev:...</span>
+          </div>
+          <div style="margin-top:12px;font-size:0.72rem;color:var(--accent-muted);">
+            Append-only. Hash-chained. Verifiable.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="forensic-callout">
+      <span class="label">Forensic work</span>
+      <p>The testimony package exports as a single zip: final report, integrity hash, chronological audit log, attestation record, raw test protocols, interview transcript, and every source document cited. One file, reconstructable on discovery, readable by opposing counsel's expert.</p>
     </div>
 
   </div>
@@ -250,7 +343,7 @@
           <img src="logo.svg" alt="" width="28" height="28">
           <span>PSYGIL</span>
         </a>
-        <p style="margin-top:14px;max-width:320px;">The psychology IDE for forensic and clinical work. Built by Foundry SMB.</p>
+        <p style="margin-top:14px;max-width:320px;">The psychology IDE for clinical and forensic work. Built by Foundry SMB in Colorado, United States.</p>
       </div>
       <div>
         <h5>Product</h5>
@@ -258,27 +351,29 @@
           <li><a href="features.html">Features</a></li>
           <li><a href="demo.html">Demo</a></li>
           <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="enterprise.html">Enterprise</a></li>
           <li><a href="download.html">Download</a></li>
         </ul>
       </div>
       <div>
         <h5>Company</h5>
         <ul>
-          <li><a href="mailto:hello@psygil.com">Contact</a></li>
-          <li><a href="mailto:sales@psygil.com">Sales</a></li>
-          <li><a href="mailto:support@psygil.com">Support</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="sales.html">Sales</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
         <h5>Legal</h5>
         <ul>
-          <li><a href="mailto:privacy@psygil.com">Privacy</a></li>
-          <li><a href="mailto:legal@psygil.com">Terms</a></li>
+          <li><a href="policies.html#privacy">Privacy</a></li>
+          <li><a href="policies.html#terms">Terms</a></li>
+          <li><a href="policies.html">All policies</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© <span id="year">2026</span> Foundry SMB. All rights reserved.</div>
+      <div>&copy; <span id="year">2026</span> Foundry SMB LLC. All rights reserved. Colorado, United States.</div>
       <div>Psygil does not diagnose. The clinician diagnoses. Always.</div>
     </div>
   </div>

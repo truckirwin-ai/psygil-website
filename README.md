@@ -68,7 +68,7 @@ The brand voice is dry, plain, and evidentiary. A few rules that belong in the h
 - Never use em dashes. Use commas, periods, or parentheticals.
 - Never use curly quotes or curly apostrophes. Straight quotes only.
 - Never use the marketing vocabulary Psygil refuses to use inside the app: leverage, utilize, facilitate, empower, unlock, seamless.
-- Never drift from the core message: Psygil is an evidence engine, not a decision engine. The clinician renders every diagnosis. The AI never diagnoses and never signs.
+- Never drift from the core message: Psygil is an evidence ledger, not a decision engine. The clinician renders every diagnosis. The AI never diagnoses and never signs.
 - Never invent features. The content here matches the app as shipped.
 
 ## License

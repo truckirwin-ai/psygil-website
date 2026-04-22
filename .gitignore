@@ -21,6 +21,7 @@ dist/
 .next/
 out/
 node_modules/
+psygil-preview.html
 
 # Cloudflare
 .wrangler/

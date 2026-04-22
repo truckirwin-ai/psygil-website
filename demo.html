@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=202604142319">
+  <link rel="stylesheet" href="styles.css?v=202604171600">
 </head>
 <body>
 
@@ -23,6 +23,7 @@
       <a href="features.html">Features</a>
       <a href="demo.html" class="active">Demo</a>
       <a href="pricing.html">Pricing</a>
+      <a href="enterprise.html">Enterprise</a>
       <a href="download.html">Download</a>
       <a href="pricing.html" class="btn btn-primary">Start subscription</a>
     </nav>
@@ -31,15 +32,37 @@
 
 <main>
 
+<style>
+.screen-thumb { position: relative; cursor: pointer; }
+.screen-thumb img { width: 100%; border-radius: 6px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.08); transition: box-shadow 0.2s; }
+.screen-thumb:hover img { box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
+.screen-thumb::after { content: "Click to expand"; position: absolute; bottom: 8px; right: 8px; font-size: 10px; color: var(--muted); background: var(--panel); padding: 2px 8px; border-radius: 4px; opacity: 0; transition: opacity 0.2s; }
+.screen-thumb:hover::after { opacity: 1; }
+.lightbox { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.85); align-items: center; justify-content: center; cursor: pointer; }
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 92vw; max-height: 90vh; border-radius: 8px; box-shadow: 0 16px 64px rgba(0,0,0,0.5); }
+</style>
+
+<div class="lightbox" id="lightbox" onclick="this.classList.remove('open')">
+  <img id="lightbox-img" src="" alt="Full screenshot">
+</div>
+<script>
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+}
+</script>
+
 <section class="hero" style="padding: 80px 0 32px;">
   <div class="container">
-    <span class="hero-eyebrow">Demo</span>
-    <h1>A full evaluation, in five stages.</h1>
-    <p class="hero-lede">
-      The walkthrough below follows a synthetic competency-to-stand-trial case from referral to attested report. The same five-stage pipeline runs clinical work: IMEs, disability, capacity, fitness-for-duty. The synthetic case is regenerated on every demo run, so it contains no real PII. The point of the demo is not the content of the case. The point is the gate.
-    </p>
-    <div class="hero-cta">
-      <span class="chip">Total runtime: about 3 minutes 30 seconds</span>
+    <h1 style="font-size: 2.4rem; font-weight: 700;">Demo: Intake to reports in 3.5 minutes</h1>
+    <div style="max-width: 960px; margin: 24px auto 0;">
+      <div style="position: relative; border-radius: 8px; overflow: hidden; background: #000; box-shadow: 0 8px 32px rgba(0,0,0,0.3); border: 1px solid var(--border);">
+        <video controls preload="metadata" style="width: 100%; display: block;">
+          <source src="docs/psygil_demo.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      </div>
     </div>
   </div>
 </section>
@@ -47,184 +70,70 @@
 <section class="section" style="padding-top: 0;">
   <div class="container">
 
-    <div class="pipeline" style="margin-top: 8px;">
-      <div class="pipeline-step">
-        <span class="gate-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L4 5 V11 C4 16 8 20 12 22 C16 20 20 16 20 11 V5 Z"/><path d="M9 12 L11 14 L15 10"/></svg></span>
-        <span class="num">01</span>
-        <span class="label">Intake</span>
-        <span class="owner">Clinician enters facts</span>
-      </div>
-      <div class="pipeline-step">
-        <span class="gate-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L4 5 V11 C4 16 8 20 12 22 C16 20 20 16 20 11 V5 Z"/><path d="M9 12 L11 14 L15 10"/></svg></span>
-        <span class="num">02</span>
-        <span class="label">Testing</span>
-        <span class="owner">Clinician scores</span>
-      </div>
-      <div class="pipeline-step">
-        <span class="gate-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L4 5 V11 C4 16 8 20 12 22 C16 20 20 16 20 11 V5 Z"/><path d="M9 12 L11 14 L15 10"/></svg></span>
-        <span class="num">03</span>
-        <span class="label">Interviews</span>
-        <span class="owner">Clinician observes</span>
-      </div>
-      <div class="pipeline-step gate">
-        <span class="gate-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L4 5 V11 C4 16 8 20 12 22 C16 20 20 16 20 11 V5 Z"/><path d="M9 12 L11 14 L15 10"/></svg></span>
-        <span class="num">04</span>
-        <span class="label">Diagnostics</span>
-        <span class="owner">Clinician renders</span>
-      </div>
-      <div class="pipeline-step">
-        <span class="gate-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L4 5 V11 C4 16 8 20 12 22 C16 20 20 16 20 11 V5 Z"/><path d="M9 12 L11 14 L15 10"/></svg></span>
-        <span class="num">05</span>
-        <span class="label">Reports</span>
-        <span class="owner">Writer, Editor, sign</span>
-      </div>
-    </div>
-
     <div class="stepper">
 
-      <div class="step">
-        <div class="step-num">01</div>
-        <div>
-          <h3>Intake</h3>
-          <p>Every case begins with the referral. Psygil opens a structured intake the moment a new case is created. Identity. Insurance. Court information. Charges. Referral question. Legal history. Family history. Medical history. Substance use. Presenting complaints. Recent events.</p>
-          <p>The clinician fills it in, not the AI. Psygil never guesses at facts the clinician has not entered. Each field is typed, each value is timestamped, and the structure is preserved so the downstream agents and the eventual reviewer know exactly what was disclosed and when.</p>
-          <div class="screenshot">
-            <div class="chrome">
-              <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-              <span class="title">Psygil — Case #CR-2026-00412 · Intake</span>
-            </div>
-            <div class="body two-col">
-              <div class="mock-rail">
-                <h5>Case nav</h5>
-                <ul>
-                  <li class="active">Intake</li>
-                  <li>Testing</li>
-                  <li>Interviews</li>
-                  <li>Diagnostics</li>
-                  <li>Reports</li>
-                </ul>
-              </div>
-              <div>
-                <div class="mock-field"><span class="lbl">Identity</span><span class="val">Doe, John A. · DOB 1984-06-11</span></div>
-                <div class="mock-field"><span class="lbl">Court</span><span class="val">King County Superior · Hon. R. Alvarez</span></div>
-                <div class="mock-field"><span class="lbl">Charges</span><span class="val">RCW 9A.36.011 Assault 1</span></div>
-                <div class="mock-field"><span class="lbl">Referral question</span><span class="val">Competency to stand trial</span></div>
-                <div class="mock-field"><span class="lbl">Substance use</span><span class="val dim">Clinician has not entered</span></div>
-              </div>
-            </div>
+      <div class="step" style="grid-template-columns: 1fr; padding: 28px 0;">
+        <div style="display: flex; gap: 32px; align-items: center;">
+          <div style="flex: 1;">
+            <h3><span style="font-family: var(--font-mono); color: var(--accent); margin-right: 8px;">01</span> Intake</h3>
+            <p>Every case begins with the referral. Psygil opens a structured intake the moment a new case is created. Identity. Court information. Charges. Referral question. Legal history. Family history. Medical history. Substance use.</p>
+            <p>The clinician fills it in, not the AI. Each field is typed, timestamped, and preserved so the downstream agents and the eventual reviewer know exactly what was disclosed and when.</p>
           </div>
-          <p class="screenshot-caption">Mockup. Will be replaced with live UI capture before launch.</p>
-          <span class="meta">~45 SECONDS · WATCH THE FIELD-BY-FIELD TYPING</span>
+          <div style="flex: 1;">
+            <div class="screen-thumb" onclick="openLightbox('docs/screen-intake-full.png')"><img src="docs/screen-intake.png" alt="Psygil intake tab"></div>
+          </div>
         </div>
       </div>
 
-      <div class="step">
-        <div class="step-num">02</div>
-        <div>
-          <h3>Testing</h3>
-          <p>Once intake is complete, the case enters the Testing stage. The Ingestor agent reads every document the clinician has provided. Referral letters. Prior evaluations. Medical records. Police reports. It produces a structured summary the clinician can review before testing begins.</p>
-          <p>The clinician selects the test battery. For competency, that might be the ECST-R and the MacCAT-CA. For risk, the HCR-20 or the Static-99R. Psygil tracks every instrument administered, who scored it, when, and the result. The AI does not pick the tests. The AI does not score the tests. The clinician does both.</p>
-          <div class="screenshot">
-            <div class="chrome">
-              <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-              <span class="title">Psygil — Case #CR-2026-00412 · Testing</span>
-            </div>
-            <div class="body">
-              <table class="mock-table">
-                <thead>
-                  <tr><th>Instrument</th><th>Administered</th><th>Scored by</th><th>Result</th><th>Flag</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>ECST-R</td><td class="num">2026-04-08</td><td>Dr. L. Park</td><td class="num">Impairment: moderate</td><td class="flag">REVIEW</td></tr>
-                  <tr><td>MacCAT-CA</td><td class="num">2026-04-08</td><td>Dr. L. Park</td><td class="num">U 14 · R 10 · A 11</td><td></td></tr>
-                  <tr><td>WAIS-IV (selected)</td><td class="num">2026-04-09</td><td>Dr. L. Park</td><td class="num">FSIQ 88</td><td></td></tr>
-                  <tr><td>TOMM</td><td class="num">2026-04-09</td><td>Dr. L. Park</td><td class="num">Trial 2: 47/50</td><td></td></tr>
-                </tbody>
-              </table>
-            </div>
+      <div class="step" style="grid-template-columns: 1fr; padding: 28px 0;">
+        <div style="display: flex; gap: 32px; align-items: center; flex-direction: row-reverse;">
+          <div style="flex: 1;">
+            <h3><span style="font-family: var(--font-mono); color: var(--accent); margin-right: 8px;">02</span> Testing</h3>
+            <p>The clinician selects the test battery. For risk, that might be the PCL-R, HCR-20v3, and SARA. Psygil tracks every instrument administered, who scored it, when, and the result. 43 instruments available out of the box.</p>
+            <p>The AI does not pick the tests. The AI does not score the tests. The clinician does both.</p>
           </div>
-          <p class="screenshot-caption">Mockup. Will be replaced with live UI capture before launch.</p>
-          <span class="meta">~30 SECONDS · CLINICIAN PICKS AND SCORES</span>
+          <div style="flex: 1;">
+            <div class="screen-thumb" onclick="openLightbox('docs/screen-testing-full.png')"><img src="docs/screen-testing.png" alt="Psygil testing tab"></div>
+          </div>
         </div>
       </div>
 
-      <div class="step">
-        <div class="step-num">03</div>
-        <div>
-          <h3>Interviews</h3>
-          <p>Interview is where the clinician meets the defendant. Face to face. Psygil does not sit in on the interview and does not record audio. When the interview is complete, the clinician's notes are entered into structured templates. Mental status exam. Behavioral observations. The defendant's account. Responses to competency or insanity questioning.</p>
-          <p>Psygil's role here is record-keeping and discoverability. Every observation lives in one place. Every quote is tied back to the date and context it was recorded. When opposing counsel issues a discovery request, the clinician can produce the underlying record in minutes, not days.</p>
-          <div class="screenshot">
-            <div class="chrome">
-              <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-              <span class="title">Psygil — Case #CR-2026-00412 · Mental status exam</span>
-            </div>
-            <div class="body">
-              <div class="mock-field"><span class="lbl">Appearance</span><span class="val">Disheveled, appropriate for weather. Cooperative stance.</span></div>
-              <div class="mock-field"><span class="lbl">Speech</span><span class="val">Rate reduced, volume low, latency prolonged.</span></div>
-              <div class="mock-field"><span class="lbl">Mood / affect</span><span class="val">Stated "tired"; affect constricted, congruent.</span></div>
-              <div class="mock-field"><span class="lbl">Thought process</span><span class="val">Linear, goal-directed. No loosening observed.</span></div>
-              <div class="mock-field"><span class="lbl">Thought content</span><span class="val">Denies SI, HI, AH, VH. Persecutory theme re: co-defendant.</span></div>
-              <div class="mock-field"><span class="lbl">Insight / judgment</span><span class="val">Fair / fair. Understands role of counsel.</span></div>
-            </div>
+      <div class="step" style="grid-template-columns: 1fr; padding: 28px 0;">
+        <div style="display: flex; gap: 32px; align-items: center;">
+          <div style="flex: 1;">
+            <h3><span style="font-family: var(--font-mono); color: var(--accent); margin-right: 8px;">03</span> Interviews</h3>
+            <p>Record sessions with live transcription running entirely on your machine. Import Zoom or Teams transcripts. Every session tracked with clinical notes, mental status observations, and collateral contacts.</p>
+            <p>Every observation lives in one place. When opposing counsel issues a discovery request, the clinician can produce the underlying record in minutes, not days.</p>
           </div>
-          <p class="screenshot-caption">Mockup. Will be replaced with live UI capture before launch.</p>
-          <span class="meta">~30 SECONDS · STRUCTURED, DISCOVERABLE NOTES</span>
+          <div style="flex: 1;">
+            <div class="screen-thumb" onclick="openLightbox('docs/screen-interviews-full.png')"><img src="docs/screen-interviews.png" alt="Psygil interviews tab"></div>
+          </div>
         </div>
       </div>
 
-      <div class="step">
-        <div class="step-num">04</div>
-        <div>
-          <h3>Diagnostics <span class="chip" style="margin-left:8px;">The gate</span></h3>
-          <p>The case enters Diagnostics. This is where Psygil's design becomes uncompromising.</p>
-          <p>The Diagnostician agent reads everything the clinician has gathered and proposes an evidence map. For every diagnosis it considers relevant, it shows the DSM-5-TR criteria, the ICD-10 code, and the specific evidence from the case file that supports or contradicts each criterion.</p>
-          <p>The agent does not diagnose. It cannot. It assembles evidence and presents it to the clinician. The clinician, and only the clinician, decides which diagnoses are rendered, which are deferred, and which are rejected. The clinician can add diagnoses the agent missed. The clinician can override the agent on every line. Reasoning is captured in a clinical notes field, timestamped, signed, and written to the audit log.</p>
-          <p><strong>Until the clinician makes at least one diagnostic decision, the Writer agent refuses to run.</strong> There is no skip. There is no AI-only path.</p>
-          <div class="screenshot">
-            <div class="chrome">
-              <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-              <span class="title">Psygil — Case #CR-2026-00412 · Diagnostician · PRIMARY GATE</span>
-            </div>
-            <div class="body">
-              <div class="evidence-mock">
-                <div class="dx"><span><span class="name">Major Depressive Disorder, recurrent, moderate</span> <span class="code">F33.1</span></span><span class="controls"><span class="pill active">RENDER</span><span class="pill">DEFER</span><span class="pill">REJECT</span></span></div>
-                <div class="dx"><span><span class="name">Posttraumatic Stress Disorder</span> <span class="code">F43.10</span></span><span class="controls"><span class="pill">RENDER</span><span class="pill active">DEFER</span><span class="pill">REJECT</span></span></div>
-                <div class="dx"><span><span class="name">Alcohol Use Disorder, moderate</span> <span class="code">F10.20</span></span><span class="controls"><span class="pill active">RENDER</span><span class="pill">DEFER</span><span class="pill">REJECT</span></span></div>
-                <div class="dx"><span><span class="name">Antisocial Personality Disorder</span> <span class="code">F60.2</span></span><span class="controls"><span class="pill">RENDER</span><span class="pill">DEFER</span><span class="pill active">REJECT</span></span></div>
-              </div>
-              <div class="mock-field" style="margin-top:8px;"><span class="lbl">Writer agent</span><span class="val dim">Blocked until clinician attests decisions</span></div>
-            </div>
+      <div class="step" style="grid-template-columns: 1fr; padding: 28px 0;">
+        <div style="display: flex; gap: 32px; align-items: center; flex-direction: row-reverse;">
+          <div style="flex: 1;">
+            <h3><span style="font-family: var(--font-mono); color: var(--accent); margin-right: 8px;">04</span> Diagnostics <span class="chip" style="margin-left:8px;">The gate</span></h3>
+            <p>The Diagnostician agent proposes an evidence map. DSM-5-TR criteria, ICD-10 codes, and supporting or contradicting evidence from the case file.</p>
+            <p>The clinician decides which diagnoses are rendered, deferred, or rejected. The clinician can add diagnoses the agent missed. <strong>Until the clinician makes at least one diagnostic decision, the Writer agent refuses to run.</strong></p>
           </div>
-          <p class="screenshot-caption">Mockup. Will be replaced with live UI capture before launch.</p>
-          <span class="meta">~50 SECONDS · SLOW DOWN. LINGER ON THE GATE</span>
+          <div style="flex: 1;">
+            <div class="screen-thumb" onclick="openLightbox('docs/screen-diagnostics-full.png')"><img src="docs/screen-diagnostics.png" alt="Psygil diagnostics tab"></div>
+          </div>
         </div>
       </div>
 
-      <div class="step">
-        <div class="step-num">05</div>
-        <div>
-          <h3>Reports</h3>
-          <p>With the clinical decisions made, the Writer agent drafts the report. It pulls language from the intake, the structured interview notes, the test results, and only the diagnoses the clinician has personally rendered. The Editor agent reviews the draft for internal consistency, tone, and citation accuracy.</p>
-          <p>The clinician reviews the draft, edits any language they disagree with, and attests. Attestation is a cryptographically signed, timestamped event tied to the clinician's identity. The report is locked. The audit log records every change from intake to signature.</p>
-          <p>If this case ends up in court, the clinician can reproduce the evidentiary chain on demand. Every record. Every test. Every decision. Every revision. Every signature.</p>
-          <div class="screenshot">
-            <div class="chrome">
-              <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-              <span class="title">Psygil — Case #CR-2026-00412 · Attestation</span>
-            </div>
-            <div class="body">
-              <div class="mock-attestation">
-                <div><span class="key">document:</span> <span class="val">cr-2026-00412-competency-report.pdf</span></div>
-                <div><span class="key">signed_by:</span> <span class="val">Park, Lena · License WA-PSY-8821 · 2026-04-11T14:22:07Z</span></div>
-                <div><span class="key">sha256:</span> <span class="val">c3b5e8f4a1d7c9b2e0f6a8d4b1c7e3f9a5d2c8e4b6f1a9d3c7e5b0f2a4d8c1e6</span></div>
-                <div><span class="key">audit_events:</span> <span class="val">47 (intake -&gt; attest)</span></div>
-                <div><span class="key">lock_status:</span> <span class="val">LOCKED</span></div>
-              </div>
-            </div>
+      <div class="step" style="grid-template-columns: 1fr; padding: 28px 0;">
+        <div style="display: flex; gap: 32px; align-items: center;">
+          <div style="flex: 1;">
+            <h3><span style="font-family: var(--font-mono); color: var(--accent); margin-right: 8px;">05</span> Reports</h3>
+            <p>The Writer agent drafts a multi-section forensic evaluation from your diagnoses, test data, clinical notes, and your writing voice. The Editor agent reviews for consistency, tone, and citation accuracy.</p>
+            <p>The clinician reviews, edits, and attests. Attestation is cryptographically signed and timestamped. The audit log records every change from intake to signature.</p>
           </div>
-          <p class="screenshot-caption">Mockup. Will be replaced with live UI capture before launch.</p>
-          <span class="meta">~40 SECONDS · WRITER, EDITOR, ATTESTATION</span>
+          <div style="flex: 1;">
+            <div class="screen-thumb" onclick="openLightbox('docs/screen-report-full.png')"><img src="docs/screen-report.png" alt="Psygil report tab"></div>
+          </div>
         </div>
       </div>
 
@@ -233,7 +142,7 @@
     <div style="margin-top:64px;padding:32px;background:var(--panel);border:1px solid var(--border);border-radius:var(--radius-lg);">
       <h3 style="margin-top:0;">Core message</h3>
       <p style="margin:0;font-size:1.05rem;color:var(--text);line-height:1.65;">
-        Psygil is an evidence engine, not a decision engine. Every diagnostic judgment is made by the licensed clinician. The AI agents read records, organize evidence, and draft language. They never diagnose, and they never sign. <strong>The doctor diagnoses. Always.</strong>
+        Psygil is an evidence ledger, not a decision engine. Every diagnostic judgment is made by the licensed clinician. The AI agents read records, organize evidence, and draft language. They never diagnose, and they never sign. <strong>The doctor diagnoses. Always.</strong>
       </p>
     </div>
 
@@ -261,7 +170,7 @@
           <img src="logo.svg" alt="" width="28" height="28">
           <span>PSYGIL</span>
         </a>
-        <p style="margin-top:14px;max-width:320px;">The psychology IDE for forensic and clinical work. Built by Foundry SMB.</p>
+        <p style="margin-top:14px;max-width:320px;">The psychology IDE for clinical and forensic work. Built by Foundry SMB in Colorado, United States.</p>
       </div>
       <div>
         <h5>Product</h5>
@@ -269,27 +178,29 @@
           <li><a href="features.html">Features</a></li>
           <li><a href="demo.html">Demo</a></li>
           <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="enterprise.html">Enterprise</a></li>
           <li><a href="download.html">Download</a></li>
         </ul>
       </div>
       <div>
         <h5>Company</h5>
         <ul>
-          <li><a href="mailto:hello@psygil.com">Contact</a></li>
-          <li><a href="mailto:sales@psygil.com">Sales</a></li>
-          <li><a href="mailto:support@psygil.com">Support</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="sales.html">Sales</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
         <h5>Legal</h5>
         <ul>
-          <li><a href="mailto:privacy@psygil.com">Privacy</a></li>
-          <li><a href="mailto:legal@psygil.com">Terms</a></li>
+          <li><a href="policies.html#privacy">Privacy</a></li>
+          <li><a href="policies.html#terms">Terms</a></li>
+          <li><a href="policies.html">All policies</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© <span id="year">2026</span> Foundry SMB. All rights reserved.</div>
+      <div>&copy; <span id="year">2026</span> Foundry SMB LLC. All rights reserved. Colorado, United States.</div>
       <div>Psygil does not diagnose. The clinician diagnoses. Always.</div>
     </div>
   </div>

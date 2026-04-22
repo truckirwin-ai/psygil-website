@@ -7,9 +7,22 @@ Treat this file as always-applied guidance. Read it before any design or copy ch
 
 ## Project
 
-Marketing site for **Psygil**, a forensic psychology IDE. Audience is licensed clinicians, forensic practices, and expert witnesses. The product promise is that **the clinician diagnoses, always** — AI agents read records, organize evidence, and draft language, but never render a diagnosis or sign a report. The site exists to make that distinction legible in 10 seconds and defensible on cross-examination.
+Marketing site for **Psygil**, a forensic psychology IDE. Audience is licensed clinicians, forensic practices, and expert witnesses. The product promise is that **the clinician diagnoses, always** — AI agents read records, organize evidence, and draft language, but never render a diagnosis or sign a report. The site exists to make that distinction legible in 10 seconds and defensible under any review.
 
-Pages: `index.html`, `features.html`, `demo.html`, `pricing.html`, `download.html`. Static HTML/CSS, no build step. Deployed to Cloudflare Pages via GitHub push (`main` branch).
+Pages: `index.html`, `features.html`, `demo.html`, `pricing.html`, `enterprise.html`, `download.html`, `about.html`, `support.html`, `sales.html`, `contact.html`, `policies.html`. Static HTML/CSS, no build step. Deployed to Cloudflare Pages via GitHub push (`main` branch).
+
+Contracting entity is **Foundry SMB LLC** (Colorado). In short-form prose (marketing copy, brand taglines, section headings), refer to the company as **Foundry SMB** without the LLC suffix. Use the full legal name **Foundry SMB LLC** only in policies, contracts, copyright lines, and explicit legal/entity statements.
+
+The `policies.html` page is tabbed: Overview, Privacy, Terms, Acceptable Use, Refund, Support SLA, Security / Responsible Disclosure, HIPAA. URL fragment (`#privacy`, `#terms`, etc.) selects the active tab on load. Each policy is versioned (v1.0) and carries an effective date. Bump the version when substantive terms change.
+
+Two form-backed pages use Cloudflare Pages Functions under `functions/api/`:
+
+- `support.html` posts to `/api/support` (handler at `functions/api/support.ts`). Routes to `support@psygil.com` via Resend.
+- `enterprise.html` posts to `/api/enterprise` (handler at `functions/api/enterprise.ts`). Routes to `sales@psygil.com` via Resend.
+
+Both Functions require the `RESEND_API_KEY` secret on the Pages project. They validate payloads, enforce a 32 KB body limit, use a hidden honeypot field, and fall back gracefully when mail is misconfigured. If an optional `RATE_LIMIT` KV namespace is bound, they also apply a five-submission-per-hour-per-IP cap.
+
+HIPAA posture (reflected across the site): **local-first**. BAAs are offered on request at the Practice and Enterprise tiers only. Solo is explicitly out of BAA scope. The Enterprise page and `policies.html#hipaa` spell this out.
 
 ---
 
@@ -84,8 +97,14 @@ General operating principles to apply in the meantime:
 
 ## Hard rules (voice and style)
 
-These are non-negotiable on this project.
+These are non-negotiable on this project. The full voice and terminology guide is in [`STYLE_GUIDE.md`](./STYLE_GUIDE.md). Read it before any copy change on a marketing page.
 
+Summary of the hardest constraints:
+
+- Write to the clinician in second person on marketing pages. "Your clinical judgment", "your expertise", "your signed diagnoses". Reserve "the clinician" for policies, About prose, and internal docs.
+- Do not use the bare term "AI" in marketing body copy. Name the assistant (writing assistant, review assistant, diagnostic assistant, ingestion assistant), or say "the assistants" / "assisting technologies" / "the tools".
+- Psygil streamlines data gathering and records keeping so the clinician's expertise shapes every evaluation. Frame features as service, not as guardrails against a dangerous machine.
+- Courtroom language (cross-examination, discovery, Daubert, Frye) belongs in forensic callouts and the Enterprise page, not in the home page hero.
 - Never use em dashes. Use commas, periods, or parentheses.
 - Never use curly quotes. Straight quotes only: `"` and `'`.
 - Never use marketing vocabulary: `leverage`, `utilize`, `facilitate`, `empower` (as a verb-for-its-own-sake), `unlock`, `seamless`, `best-in-class`, `cutting-edge`, `next-generation`.

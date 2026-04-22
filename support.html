@@ -1,0 +1,296 @@
+<!doctype html>
+<!-- build: 2026-04-17T00:00:00Z -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support | Psygil</title>
+  <meta name="description" content="Psygil support for license activation, installer issues, billing questions, and bug reports. Email support@psygil.com or send a request from this page.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=202604171600">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header-inner">
+    <a class="brand" href="/">
+      <img src="logo.svg" alt="" width="28" height="28">
+      <span>PSYGIL</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="features.html">Features</a>
+      <a href="demo.html">Demo</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="enterprise.html">Enterprise</a>
+      <a href="download.html">Download</a>
+      <a href="pricing.html" class="btn btn-primary">Start subscription</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" style="padding: 80px 0 32px;">
+  <div class="container">
+    <span class="hero-eyebrow">Support</span>
+    <h1>A direct line to the people who ship Psygil.</h1>
+    <p class="hero-lede">
+      Tell us what happened. The form below routes to support@psygil.com and a human replies. License activation, installer failures, billing, and bug reports are all routed the same way. Forensic clinicians have a dedicated fast path for anything that blocks a report signature.
+    </p>
+    <div class="hero-cta">
+      <span class="chip">Hours: Mon to Fri, 9:00 to 18:00 Mountain Time</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding: 16px 0 32px;">
+  <div class="container">
+
+    <div class="section-title">
+      <span class="kicker">Response targets</span>
+      <h2>What you can expect, by tier</h2>
+      <p>Targets are measured during support hours. Critical issues are activation failures, signature failures, and anything blocking a report from being written or filed. General issues are bugs, questions, and feature requests.</p>
+    </div>
+
+    <div class="form-card" style="padding: 20px;">
+      <table class="support-targets" aria-label="Response time targets by tier">
+        <thead>
+          <tr>
+            <th scope="col">Tier</th>
+            <th scope="col">Critical</th>
+            <th scope="col">General</th>
+            <th scope="col">Channel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tier">Solo</td>
+            <td><span class="target-num">1 business day</span></td>
+            <td><span class="target-num">2 business days</span></td>
+            <td>Email</td>
+          </tr>
+          <tr>
+            <td class="tier">Practice</td>
+            <td><span class="target-num">4 business hours</span></td>
+            <td><span class="target-num">1 business day</span></td>
+            <td>Email, video on request</td>
+          </tr>
+          <tr>
+            <td class="tier">Enterprise</td>
+            <td><span class="target-num">2 business hours</span></td>
+            <td><span class="target-num">1 business day</span></td>
+            <td>Email, dedicated technical contact</td>
+          </tr>
+          <tr>
+            <td class="tier">Evaluating</td>
+            <td>Best effort</td>
+            <td>Best effort</td>
+            <td>Email</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="dim" style="font-size: 0.88rem; margin-top: 16px;">
+      Response means a human has read your ticket and replied, not that the issue is resolved. Fix time depends on severity and reproducibility. Full terms are on the <a href="policies.html#support">Support Policy</a>.
+    </p>
+
+  </div>
+</section>
+
+<section class="section" style="padding: 16px 0 80px;">
+  <div class="container">
+
+    <div class="section-title">
+      <span class="kicker">Send a request</span>
+      <h2>Tell us what you need.</h2>
+    </div>
+
+    <div class="form-aside">
+      <h4>Do not include protected health information (PHI) in the message.</h4>
+      <p>For privacy reasons, keep patient names, dates of birth, case file content, and other identifying details out of the description. If PHI is necessary to reproduce an issue, we will arrange a separate channel. Practice and Enterprise customers with a signed BAA may include limited PHI; see the <a href="policies.html#hipaa">HIPAA notice</a>.</p>
+    </div>
+
+    <div class="form-card">
+      <form id="support-form" novalidate>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="sf-name">Name<span class="req" aria-hidden="true">*</span></label>
+            <input id="sf-name" name="name" type="text" autocomplete="name" required maxlength="120">
+          </div>
+          <div class="form-field">
+            <label for="sf-email">Email<span class="req" aria-hidden="true">*</span></label>
+            <input id="sf-email" name="email" type="email" autocomplete="email" required maxlength="200">
+          </div>
+          <div class="form-field">
+            <label for="sf-tier">Your tier<span class="req" aria-hidden="true">*</span></label>
+            <select id="sf-tier" name="tier" required>
+              <option value="">Select one</option>
+              <option value="solo">Solo</option>
+              <option value="practice">Practice</option>
+              <option value="enterprise">Enterprise</option>
+              <option value="evaluating">Evaluating, not yet licensed</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="sf-category">Category<span class="req" aria-hidden="true">*</span></label>
+            <select id="sf-category" name="category" required>
+              <option value="">Select one</option>
+              <option value="activation">License or activation</option>
+              <option value="installer">Installer or platform</option>
+              <option value="billing">Billing or subscription</option>
+              <option value="bug">Bug or unexpected behavior</option>
+              <option value="feature">Feature request</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-field full">
+            <label for="sf-subject">Subject<span class="req" aria-hidden="true">*</span></label>
+            <input id="sf-subject" name="subject" type="text" required maxlength="200" placeholder="One short sentence">
+          </div>
+          <div class="form-field full">
+            <label for="sf-message">What is happening?<span class="req" aria-hidden="true">*</span></label>
+            <textarea id="sf-message" name="message" required maxlength="8000" placeholder="Steps you took. What you expected. What you saw. Version of Psygil (Help, About). Operating system. No PHI."></textarea>
+            <p class="hint">Up to 8,000 characters. We read every ticket.</p>
+          </div>
+
+          <div class="form-field honeypot" aria-hidden="true">
+            <label for="sf-company">Company (leave blank)</label>
+            <input id="sf-company" name="company" type="text" tabindex="-1" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <p class="form-footnote">Submitting sends this to support@psygil.com. Your email address is the reply-to. We retain support tickets for 24 months.</p>
+          <button type="submit" class="btn btn-primary btn-lg" id="sf-submit">Send request</button>
+        </div>
+
+        <div class="form-status" id="sf-status" role="status" aria-live="polite" hidden></div>
+      </form>
+    </div>
+
+    <p class="center dim" style="margin-top: 20px; font-size: 0.9rem;">
+      If the form is unavailable, email <a href="mailto:support@psygil.com">support@psygil.com</a> directly. Security issues should go to <a href="mailto:security@psygil.com">security@psygil.com</a>.
+    </p>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/">
+          <img src="logo.svg" alt="" width="28" height="28">
+          <span>PSYGIL</span>
+        </a>
+        <p style="margin-top:14px;max-width:320px;">The psychology IDE for clinical and forensic work. Built by Foundry SMB in Colorado, United States.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="demo.html">Demo</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="enterprise.html">Enterprise</a></li>
+          <li><a href="download.html">Download</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="sales.html">Sales</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="policies.html#privacy">Privacy</a></li>
+          <li><a href="policies.html#terms">Terms</a></li>
+          <li><a href="policies.html">All policies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; <span id="year">2026</span> Foundry SMB LLC. All rights reserved. Colorado, United States.</div>
+      <div>Psygil does not diagnose. The clinician diagnoses. Always.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+(function () {
+  var form = document.getElementById('support-form');
+  if (!form) return;
+  var status = document.getElementById('sf-status');
+  var submit = document.getElementById('sf-submit');
+
+  function show(kind, text) {
+    status.hidden = false;
+    status.className = 'form-status ' + (kind === 'ok' ? 'is-success' : 'is-error');
+    status.textContent = text;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    status.hidden = true;
+
+    var data = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      tier: form.tier.value,
+      category: form.category.value,
+      subject: form.subject.value.trim(),
+      message: form.message.value.trim(),
+      company: form.company.value
+    };
+
+    if (!data.name || !data.email || !data.tier || !data.category || !data.subject || !data.message) {
+      show('err', 'Every field marked with an asterisk is required.');
+      return;
+    }
+    if (data.message.length < 10) {
+      show('err', 'Please give us a few more details so we can help.');
+      return;
+    }
+
+    submit.disabled = true;
+    submit.textContent = 'Sending...';
+
+    fetch('/api/support', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(function (res) {
+      return res.json().then(function (body) { return { ok: res.ok, body: body }; });
+    }).then(function (result) {
+      submit.disabled = false;
+      submit.textContent = 'Send request';
+      if (result.ok && result.body && result.body.ok) {
+        show('ok', 'Request received. You will hear from support@psygil.com at the address you provided.');
+        form.reset();
+      } else {
+        var msg = (result.body && result.body.error) || 'Something went wrong. Email support@psygil.com directly and we will pick it up.';
+        show('err', msg);
+      }
+    }).catch(function () {
+      submit.disabled = false;
+      submit.textContent = 'Send request';
+      show('err', 'Network error. Email support@psygil.com directly and we will pick it up.');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
