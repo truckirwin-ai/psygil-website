@@ -36,11 +36,6 @@ const PLATFORM_FILES: Record<InstallerPlatform, PlatformFile> = {
     filename: 'Psygil-Setup.exe',
     mime: 'application/vnd.microsoft.portable-executable',
   },
-  linux: {
-    keySuffix: 'Psygil.AppImage',
-    filename: 'Psygil.AppImage',
-    mime: 'application/x-appimage',
-  },
 };
 
 export const onRequestGet: PagesFunction<Env> = async (ctx) => {

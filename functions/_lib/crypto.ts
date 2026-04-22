@@ -64,7 +64,7 @@ export function base64UrlToBytes(s: string): Uint8Array {
 // body using INSTALLER_TOKEN_SECRET. Good enough for a short-lived download
 // link tied to an email + platform. The link expires; the R2 object stays.
 
-export type InstallerPlatform = 'mac' | 'windows' | 'linux';
+export type InstallerPlatform = 'mac' | 'windows';
 
 export interface InstallerTokenPayload {
   email: string;
@@ -73,7 +73,7 @@ export interface InstallerTokenPayload {
   purpose: 'trial' | 'purchase';
 }
 
-const VALID_PLATFORMS: ReadonlySet<InstallerPlatform> = new Set(['mac', 'windows', 'linux']);
+const VALID_PLATFORMS: ReadonlySet<InstallerPlatform> = new Set(['mac', 'windows']);
 
 export async function signInstallerToken(
   secret: string,
