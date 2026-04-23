@@ -1,190 +1,17 @@
 <!doctype html>
-<!-- build: 2026-04-22T00:00:00Z -->
+<!-- build: 2026-04-22T17:00:00Z -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Download | Psygil</title>
-  <meta name="description" content="Start a 10 day trial or purchase Psygil. Enter your practice details, pick your path, and your license key and installer link arrive on the next screen.">
+  <meta name="description" content="Choose a Psygil plan. Stripe handles payment and your license key and installer link arrive by email the moment payment clears.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=202604220000">
+  <link rel="stylesheet" href="styles.css?v=202604221700">
   <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-  <style>
-    /* Page-scoped components for the two-step download flow. Reuses design
-       tokens from styles.css. Colors pulled from :root variables. */
-
-    .step-indicator {
-      display: flex;
-      list-style: none;
-      padding: 0;
-      margin: 0 0 24px 0;
-      gap: 12px;
-      font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-secondary);
-    }
-    .step-indicator .step {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--panel-2);
-      flex: 1;
-    }
-    .step-indicator .step.is-active {
-      border-color: var(--accent);
-      background: var(--accent-soft);
-      color: var(--text);
-    }
-    .step-indicator .step.is-done {
-      border-color: var(--border-strong, #8c959f);
-      background: var(--panel);
-    }
-    .step-indicator .step-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 22px;
-      height: 22px;
-      border-radius: 999px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      font-weight: 600;
-      color: var(--text);
-    }
-    .step-indicator .step.is-active .step-num {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-    }
-
-    .choice-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin: 8px 0 20px;
-    }
-    @media (max-width: 720px) {
-      .choice-grid { grid-template-columns: 1fr; }
-    }
-    .choice-card {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-      padding: 22px 22px 24px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      background: var(--panel);
-      cursor: pointer;
-      font-family: inherit;
-      color: inherit;
-      box-shadow: var(--shadow-sm);
-      transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
-                  box-shadow 180ms cubic-bezier(0.22, 1, 0.36, 1),
-                  border-color 180ms ease-out;
-      position: relative;
-    }
-    .choice-card:hover,
-    .choice-card:focus-visible {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--accent);
-      outline: none;
-    }
-    .choice-card.is-primary {
-      border-color: var(--accent);
-      background: linear-gradient(180deg, var(--accent-soft), var(--panel) 70%);
-    }
-    .choice-card h3 {
-      margin: 0 0 8px 0;
-      font-size: 1.18rem;
-    }
-    .choice-card p {
-      margin: 0 0 18px 0;
-      color: var(--text-secondary);
-      font-size: 0.96rem;
-    }
-    .choice-badge {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--accent);
-      background: var(--accent-soft);
-      border: 1px solid var(--accent);
-      border-radius: 4px;
-      padding: 2px 8px;
-    }
-    .choice-cta {
-      margin-top: auto;
-      align-self: flex-start;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 16px;
-      border-radius: var(--radius);
-      background: var(--accent);
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-    .choice-card:not(.is-primary) .choice-cta {
-      background: var(--panel-2);
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-    .choice-card.is-busy { opacity: 0.6; pointer-events: none; }
-
-    .kv-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 14px;
-      background: var(--panel-2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-    }
-    .kv-label {
-      font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-secondary);
-      min-width: 90px;
-    }
-    .license-key {
-      font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
-      font-size: 1rem;
-      font-weight: 600;
-      background: var(--panel);
-      padding: 8px 12px;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-      user-select: all;
-      flex: 1 1 auto;
-      overflow-wrap: anywhere;
-    }
-    .btn-sm { padding: 6px 12px; font-size: 0.88rem; }
-    .btn-ghost {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-    }
-    .btn-ghost:hover { color: var(--text); border-color: var(--border-strong, #8c959f); }
-  </style>
 </head>
 <body>
 
@@ -208,132 +35,16 @@
 <section class="hero" style="padding: 80px 0 32px;">
   <div class="container">
     <span class="hero-eyebrow">Download Psygil</span>
-    <h1>Pick a plan, or start a 10 day trial.</h1>
-    <p class="hero-lede">
-      Purchase below and your license key plus installer link arrive in your inbox the moment Stripe confirms payment. Or start a no card trial and your key lands on this page immediately.
-    </p>
+    <h1>Choose your plan</h1>
   </div>
 </section>
 
 <section class="section" style="padding-top: 0;">
-  <div class="container section-narrow">
-
-    <div class="section-title" style="margin-bottom: 18px;">
-      <span class="kicker">Purchase a license</span>
-      <h2>Choose your plan</h2>
-      <p>Stripe handles payment and subscription billing. Your signed license key and download link arrive by email as soon as payment clears. Cancel or switch tiers any time from the customer portal.</p>
-    </div>
-
+  <div class="container">
     <stripe-pricing-table
       pricing-table-id="prctbl_1TP8e8PAMoN03BadV3qwf22G"
       publishable-key="pk_live_51TMACvPAMoN03BadkNSUuMih62R2sQiEDipTCqX3TlCCHFgezEuHivwZXkJxhUnf0pjs44E8KEfKBtX7msTQIyFb00wUK159Vg">
     </stripe-pricing-table>
-
-  </div>
-</section>
-
-<section class="section" style="padding-top: 0;">
-  <div class="container section-narrow">
-
-    <div class="section-title" style="margin-bottom: 18px;">
-      <span class="kicker">Or try first</span>
-      <h2>10 day trial, no card required</h2>
-      <p>Full features for 10 days. Paste the trial key at first launch. The 10 day countdown starts on first run, not on download.</p>
-    </div>
-
-    <div class="form-card" id="step-1">
-      <form id="lead-form" novalidate>
-        <div class="form-grid">
-          <div class="form-field">
-            <label for="lf-name">Full name<span class="req" aria-hidden="true">*</span></label>
-            <input id="lf-name" name="name" type="text" autocomplete="name" required maxlength="120">
-          </div>
-          <div class="form-field">
-            <label for="lf-email">Work email<span class="req" aria-hidden="true">*</span></label>
-            <input id="lf-email" name="email" type="email" autocomplete="email" required maxlength="200">
-          </div>
-          <div class="form-field full">
-            <label for="lf-practice">Practice name<span class="req" aria-hidden="true">*</span></label>
-            <input id="lf-practice" name="practice_name" type="text" autocomplete="organization" required maxlength="200">
-          </div>
-          <div class="form-field">
-            <label for="lf-city">City<span class="req" aria-hidden="true">*</span></label>
-            <input id="lf-city" name="city" type="text" autocomplete="address-level2" required maxlength="120">
-          </div>
-          <div class="form-field">
-            <label for="lf-state">State or region<span class="req" aria-hidden="true">*</span></label>
-            <input id="lf-state" name="state" type="text" autocomplete="address-level1" required maxlength="80">
-          </div>
-          <div class="form-field full">
-            <label for="lf-phone">Phone<span class="req" aria-hidden="true">*</span></label>
-            <input id="lf-phone" name="phone" type="tel" autocomplete="tel" required maxlength="40" placeholder="+1 555 123 4567">
-          </div>
-
-          <div class="form-field honeypot" aria-hidden="true">
-            <label for="lf-website">Website (leave blank)</label>
-            <input id="lf-website" name="website" type="text" tabindex="-1" autocomplete="off">
-          </div>
-        </div>
-
-        <div class="form-footer">
-          <p class="form-footnote">Your details let us activate your trial license and contact you about your account. See the <a href="policies.html#privacy">Privacy policy</a>. No protected health information on this form.</p>
-          <button type="submit" class="btn btn-primary btn-lg" id="lf-continue">Start 10 day trial</button>
-        </div>
-
-        <div class="form-status" id="lf-status-1" role="status" aria-live="polite" hidden></div>
-      </form>
-    </div>
-
-    <div class="form-card" id="step-3" hidden>
-      <div id="trial-result">
-        <div class="section-title" style="margin-bottom: 16px;">
-          <span class="kicker">Trial activated</span>
-          <h2>Your 10 day trial is ready.</h2>
-          <p>Copy your trial key and grab the installer for your operating system. Paste the key at first launch. The 10 day countdown starts on first run, not on download.</p>
-        </div>
-
-        <div class="kv-row">
-          <span class="kv-label">Trial key</span>
-          <code class="license-key" id="trial-key-out"></code>
-          <button type="button" class="btn btn-secondary btn-sm" id="copy-trial-key">Copy</button>
-        </div>
-
-        <div class="kv-row">
-          <span class="kv-label">Installer</span>
-          <a class="btn btn-primary btn-sm" id="installer-link" href="#" rel="noopener">Download installer</a>
-          <span class="dim" style="font-size: 0.85rem;">macOS and Windows builds in the bundle</span>
-        </div>
-
-        <p class="hint" style="margin-top: 16px;">A copy of your trial key and the installer link has been sent to the email you provided, for records. Write to <a href="mailto:support@psygil.com">support@psygil.com</a> if anything is missing.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-title">
-      <span class="kicker">Supported platforms</span>
-      <h2>Native installers for the two operating systems clinicians actually use</h2>
-    </div>
-
-    <div class="platform-grid">
-      <div class="platform-card">
-        <h4>macOS</h4>
-        <div class="meta">12 Monterey or later</div>
-        <p style="margin-top: 10px;">Installer for Apple Silicon (M1, M2, M3, M4). Installs to /Applications.</p>
-      </div>
-      <div class="platform-card">
-        <h4>Windows</h4>
-        <div class="meta">10 and 11, x64</div>
-        <p style="margin-top: 10px;">NSIS installer. Runs without administrator rights after the initial install. Integrates with the Windows credential store for license key persistence.</p>
-      </div>
-    </div>
-
-    <p class="center dim" style="margin-top: 12px; font-size: 0.9rem;">
-      Each seat activates on one workstation at a time. Reassign a seat to a new machine by writing to support with your license key.
-    </p>
   </div>
 </section>
 
@@ -369,17 +80,6 @@
       <p>Yes. Write to <a href="mailto:support@psygil.com">support@psygil.com</a> from the email address you used on the form. We verify the account and resend the trial key plus the installer link.</p>
     </details>
 
-  </div>
-</section>
-
-<section class="cta-strip">
-  <div class="container">
-    <h2>Prefer to talk before you try?</h2>
-    <p>Sales can walk you through activation, seat management, and the Enterprise onboarding path.</p>
-    <div class="cta-buttons">
-      <a href="sales.html" class="btn btn-primary btn-lg">Talk to sales</a>
-      <a href="demo.html" class="btn btn-secondary btn-lg">Watch the demo</a>
-    </div>
   </div>
 </section>
 
@@ -430,124 +130,6 @@
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
-
-(function () {
-  var form = document.getElementById('lead-form');
-  if (!form) return;
-
-  var step1 = document.getElementById('step-1');
-  var step3 = document.getElementById('step-3');
-  var continueBtn = document.getElementById('lf-continue');
-  var status1 = document.getElementById('lf-status-1');
-  var trialKeyOut = document.getElementById('trial-key-out');
-  var installerLink = document.getElementById('installer-link');
-  var copyBtn = document.getElementById('copy-trial-key');
-
-  function detectPlatform() {
-    var ua = (navigator.userAgent || '') + ' ' + (navigator.platform || '');
-    if (/Mac|iPhone|iPad|iPod/i.test(ua)) return 'mac';
-    if (/Win(dows)?/i.test(ua)) return 'windows';
-    if (/Linux|X11/i.test(ua)) return 'linux';
-    return 'mac';
-  }
-
-  function show(el, kind, text) {
-    el.hidden = false;
-    el.className = 'form-status ' + (kind === 'ok' ? 'is-success' : 'is-error');
-    el.textContent = text;
-  }
-  function hide(el) { el.hidden = true; el.textContent = ''; }
-
-  function validateForm() {
-    var data = {
-      name: form.name.value.trim(),
-      email: form.email.value.trim(),
-      practice_name: form.practice_name.value.trim(),
-      city: form.city.value.trim(),
-      state: form.state.value.trim(),
-      phone: form.phone.value.trim(),
-      website: form.website.value
-    };
-    if (!data.name || !data.email || !data.practice_name || !data.city || !data.state || !data.phone) {
-      return { ok: false, error: 'Every field marked with an asterisk is required.' };
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-      return { ok: false, error: 'Please enter a valid email address.' };
-    }
-    return { ok: true, data: data };
-  }
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    hide(status1);
-    var result = validateForm();
-    if (!result.ok) {
-      show(status1, 'err', result.error);
-      return;
-    }
-
-    var originalText = continueBtn.textContent;
-    continueBtn.disabled = true;
-    continueBtn.textContent = 'Starting trial...';
-
-    var body = {
-      name: result.data.name,
-      email: result.data.email,
-      practice_name: result.data.practice_name,
-      city: result.data.city,
-      state: result.data.state,
-      phone: result.data.phone,
-      action: 'trial',
-      platform: detectPlatform(),
-      website: result.data.website
-    };
-
-    fetch('/api/lead', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body)
-    }).then(function (res) {
-      return res.json().then(function (b) { return { ok: res.ok, body: b }; });
-    }).then(function (r) {
-      continueBtn.disabled = false;
-      continueBtn.textContent = originalText;
-      if (r.ok && r.body && r.body.ok) {
-        trialKeyOut.textContent = r.body.trial_key || '';
-        installerLink.setAttribute('href', r.body.installer_url || '#');
-        step1.hidden = true;
-        step3.hidden = false;
-        if (step3.scrollIntoView) step3.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        var msg = (r.body && r.body.error) || 'Something went wrong. Write to support@psygil.com and we will pick it up.';
-        show(status1, 'err', msg);
-      }
-    }).catch(function () {
-      continueBtn.disabled = false;
-      continueBtn.textContent = originalText;
-      show(status1, 'err', 'Network error. Write to support@psygil.com and we will pick it up.');
-    });
-  });
-
-  copyBtn.addEventListener('click', function () {
-    var text = trialKeyOut.textContent || '';
-    if (!text) return;
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(function () {
-        var original = copyBtn.textContent;
-        copyBtn.textContent = 'Copied';
-        setTimeout(function () { copyBtn.textContent = original; }, 1600);
-      });
-    } else {
-      var range = document.createRange();
-      range.selectNode(trialKeyOut);
-      var sel = window.getSelection();
-      sel.removeAllRanges();
-      sel.addRange(range);
-      try { document.execCommand('copy'); } catch (err) { /* noop */ }
-      sel.removeAllRanges();
-    }
-  });
-})();
 </script>
 
 </body>
