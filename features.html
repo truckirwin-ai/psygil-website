@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- build: 2026-04-27T12:00:00Z -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -9,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=202604171600">
+  <link rel="stylesheet" href="styles.css?v=202604271200">
 </head>
 <body>
 
@@ -30,7 +31,7 @@
 
 <nav class="anchor-rail" aria-label="Feature sections">
   <div class="container anchor-rail-inner">
-    <a href="#gate" class="accent">The gate</a>
+    <a href="#gate">The Gate</a>
     <a href="#pipeline">Pipeline</a>
     <a href="#testing">Testing</a>
     <a href="#interview">Interview</a>
@@ -377,6 +378,51 @@
 </footer>
 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+<script>
+(function () {
+  var rail = document.querySelector('.anchor-rail');
+  if (!rail) return;
+  var links = Array.prototype.slice.call(rail.querySelectorAll('a[href^="#"]'));
+  var sections = links.map(function (link) {
+    return document.getElementById(link.getAttribute('href').slice(1));
+  }).filter(Boolean);
+  if (!sections.length) return;
+
+  function setActive(id) {
+    links.forEach(function (link) {
+      if (link.getAttribute('href') === '#' + id) {
+        link.classList.add('is-active');
+      } else {
+        link.classList.remove('is-active');
+      }
+    });
+  }
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      var visible = entries.filter(function (e) { return e.isIntersecting; });
+      if (!visible.length) return;
+      visible.sort(function (a, b) {
+        return a.boundingClientRect.top - b.boundingClientRect.top;
+      });
+      setActive(visible[0].target.id);
+    }, {
+      rootMargin: '-120px 0px -55% 0px',
+      threshold: 0
+    });
+    sections.forEach(function (section) { observer.observe(section); });
+  }
+
+  links.forEach(function (link) {
+    link.addEventListener('click', function () {
+      setActive(link.getAttribute('href').slice(1));
+    });
+  });
+
+  setActive(sections[0].id);
+})();
+</script>
 
 </body>
 </html>

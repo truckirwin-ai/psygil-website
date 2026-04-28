@@ -728,6 +728,14 @@ code {
 }
 .anchor-rail a.accent { color: var(--accent); }
 .anchor-rail a.accent:hover { border-bottom-color: var(--accent); }
+.anchor-rail a.is-active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.anchor-rail a.is-active:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
 
 /* ---------- Evidence map mock (visual) ---------- */
 .evidence-mock {
@@ -1312,6 +1320,16 @@ code {
   letter-spacing: -0.005em;
 }
 
+.hero-bleed .hero-lede {
+  color: #FFB87A;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  font-weight: 600;
+  margin: 16px 0 28px;
+  max-width: 780px;
+  letter-spacing: -0.005em;
+}
+
 .hero-bleed .hero-cta {
   display: flex;
   gap: 12px;
@@ -1557,8 +1575,15 @@ code {
 .cta-dark h2 {
   color: #ffffff;
   font-size: clamp(1.8rem, 3.4vw, 2.6rem);
-  margin: 0 0 28px;
+  margin: 0 0 18px;
   letter-spacing: -0.02em;
+}
+.cta-dark p {
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 640px;
+  margin: 0 auto 28px;
+  font-size: 1.05rem;
+  line-height: 1.55;
 }
 .cta-dark .cta-buttons {
   display: flex;
