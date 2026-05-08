@@ -17,7 +17,7 @@ const app = new Hono<{ Bindings: Env }>();
  * Enterprise is sales-gated; this endpoint refuses it.
  *
  * When convert_from_sub_id is supplied and points at an active trial, the resulting
- * paid subscription inherits the trial's seat(s) on fulfillment — the device binding
+ * paid subscription inherits the trial's seat(s) on fulfillment  -  the device binding
  * carries over so the user doesn't re-activate.
  */
 app.post('/', async (c) => {

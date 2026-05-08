@@ -11,12 +11,12 @@ Class: `.screenshot`
 - White panel (`--panel`) on a 1px `--border`, 10px radius, `--shadow-lg`.
 - Top bar `.chrome` is `--panel-2` background, `--font-mono` 0.72rem, `--text-secondary`.
 - Three macOS-style traffic-light dots: red `#ff6b6b`, yellow `#f7c948`, green `#1a7f37`. 10x10, fully round.
-- Title format: `Psygil — Case #CR-2026-00412 · <stage>` with a middle-dot separator. Letter-spacing 0.04em.
+- Title format: `Psygil  -  Case #CR-2026-00412 · <stage>` with a middle-dot separator. Letter-spacing 0.04em.
 - Body padding 22px on a `display: grid; gap: 14px`. `body.two-col` adds a 220px sidebar column for the case nav.
 
 Below every mockup: an italic caption "Mockup. Will be replaced with live UI capture before launch." (`.screenshot-caption`).
 
-## Stage 01 — Intake
+## Stage 01  -  Intake
 
 Source: `demo.html` lines 91-115. CSS: `.mock-rail`, `.mock-field`.
 
@@ -24,11 +24,11 @@ Cues:
 - Two-column body. Left: `.mock-rail` "CASE NAV" with mono uppercase eyebrow `h5`. The active item ("Intake") gets `--accent-soft` background and `--accent` text in semibold.
 - Right: stack of `.mock-field` rows. Two-column grid (160px label / 1fr value), 1px bottom border between rows, no border on the last.
 - Labels are `--font-mono` 0.78rem, `--text-secondary`, letter-spacing 0.04em. Values are 0.9rem, `--text`, weight 500.
-- "Substance use" is shown empty with `.val.dim` (italic, `--text-secondary`) reading "Clinician has not entered" — this is the design tell that Psygil never invents facts.
+- "Substance use" is shown empty with `.val.dim` (italic, `--text-secondary`) reading "Clinician has not entered"  -  this is the design tell that Psygil never invents facts.
 
-Caption meta: `~45 SECONDS · WATCH THE FIELD-BY-FIELD TYPING` (`.step .meta` — mono, 0.75rem, accent, letter-spacing 0.08em).
+Caption meta: `~45 SECONDS · WATCH THE FIELD-BY-FIELD TYPING` (`.step .meta`  -  mono, 0.75rem, accent, letter-spacing 0.08em).
 
-## Stage 02 — Testing
+## Stage 02  -  Testing
 
 Source: lines 127-145. CSS: `.mock-table`.
 
@@ -37,18 +37,18 @@ Cues:
 - Header row: mono uppercase 0.72rem `--text-secondary`, letter-spacing 0.08em, semibold, 1px bottom border.
 - Body rows: regular Inter 0.85rem `--text`, 8/10 padding, 1px bottom border between rows.
 - Numeric cells (`.num`): mono. The Result column uses mono so scores read like data.
-- "Flag" column uses `.flag` — accent color, weight 600, all-caps. Used here for `REVIEW` on the ECST-R row.
+- "Flag" column uses `.flag`  -  accent color, weight 600, all-caps. Used here for `REVIEW` on the ECST-R row.
 
-## Stage 03 — Interviews
+## Stage 03  -  Interviews
 
 Source: lines 157-170. CSS: same `.mock-field` as Intake.
 
 Cues:
 - Single-column body. Six `.mock-field` rows: Appearance, Speech, Mood / affect, Thought process, Thought content, Insight / judgment.
 - Same label/value typography as Intake. Reads like a structured MSE form.
-- No accent color in the body — this stage is observational record-keeping, not a decision moment.
+- No accent color in the body  -  this stage is observational record-keeping, not a decision moment.
 
-## Stage 04 — Diagnostics (THE GATE)
+## Stage 04  -  Diagnostics (THE GATE)
 
 Source: lines 184-198. CSS: `.evidence-mock`, `.dx`, `.controls`, `.pill`.
 
@@ -65,17 +65,17 @@ Cues:
 
 The three pills represent the only three choices the clinician can make per proposed diagnosis:
 
-- **RENDER** — Clinician accepts the diagnosis. Goes onto the report. Reasoning is recorded with timestamp + signature.
-- **DEFER** — Clinician is not ready to decide. The diagnosis is parked; the case cannot leave the gate while any row is still in DEFER. Forces a follow-up.
-- **REJECT** — Clinician explicitly rules out the diagnosis. Recorded as a negative finding (this is itself a defensible clinical act, separate from "didn't consider it").
+- **RENDER**  -  Clinician accepts the diagnosis. Goes onto the report. Reasoning is recorded with timestamp + signature.
+- **DEFER**  -  Clinician is not ready to decide. The diagnosis is parked; the case cannot leave the gate while any row is still in DEFER. Forces a follow-up.
+- **REJECT**  -  Clinician explicitly rules out the diagnosis. Recorded as a negative finding (this is itself a defensible clinical act, separate from "didn't consider it").
 
 These pills are mutually exclusive per row. Exactly one is `.active` at any time. The Writer agent stays blocked until every proposed diagnosis has a decision (no row left without an active pill, and no row left in DEFER if a downstream report is requested).
 
-The mockup currently shows: MDD recurrent moderate → RENDER, PTSD → DEFER, AUD moderate → RENDER, Antisocial PD → REJECT. That mix is intentional — it shows all three states are real decisions, not stylistic variations.
+The mockup currently shows: MDD recurrent moderate → RENDER, PTSD → DEFER, AUD moderate → RENDER, Antisocial PD → REJECT. That mix is intentional  -  it shows all three states are real decisions, not stylistic variations.
 
 Caption meta: `~50 SECONDS · SLOW DOWN. LINGER ON THE GATE`.
 
-## Stage 05 — Reports / Attestation
+## Stage 05  -  Reports / Attestation
 
 Source: lines 211-225. CSS: `.mock-attestation`.
 
@@ -84,13 +84,13 @@ Cues:
 - Mono 0.78rem, `--text-secondary`, line-height 1.7. Reads like a YAML-ish manifest or a git commit trailer.
 - Each line is `key:` (accent color) + ` value` (`--text`). Keys: `document`, `signed_by`, `sha256`, `audit_events`, `lock_status`.
 - The sha256 is shown in full to communicate "real cryptographic attestation, not a checkmark icon."
-- `lock_status: LOCKED` is the closing beat — the clinician has signed and the report is sealed.
+- `lock_status: LOCKED` is the closing beat  -  the clinician has signed and the report is sealed.
 
 ## Style summary (apply to any future stage mockup)
 
 - Always use the chrome frame with the case ID in the title.
-- Mono is the voice of "captured data" — labels, codes, scores, hashes, timestamps, eyebrow meta.
-- Inter is the voice of "human content" — diagnosis names, value text, body copy.
+- Mono is the voice of "captured data"  -  labels, codes, scores, hashes, timestamps, eyebrow meta.
+- Inter is the voice of "human content"  -  diagnosis names, value text, body copy.
 - Accent (`#E8650A`) appears only on:
   - active states (selected nav item, RENDER/DEFER/REJECT active pill)
   - codes and identifiers (ICD-10, attestation keys)

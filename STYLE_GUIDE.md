@@ -72,13 +72,13 @@ Use these. They acknowledge the clinician and name the thing that matters:
 
 ## 5. Words and phrases to avoid
 
-- **"the AI"** — name the specific assistant instead
-- **"AI-generated"** — say **assistant-drafted** or **draft requiring your review**
-- **"AI-first", "AI-only path"** — reframe: **no shortcut around your judgment**
-- **"automates diagnosis"** — never
-- **"replaces the clinician"** — Psygil does not replace; it streamlines
-- **"prevents premature conclusions"** — softer: **keeps decisions in your hands**
-- **"stops the AI from..."** — reframe: **keeps you in charge of...**
+- **"the AI"**  -  name the specific assistant instead
+- **"AI-generated"**  -  say **assistant-drafted** or **draft requiring your review**
+- **"AI-first", "AI-only path"**  -  reframe: **no shortcut around your judgment**
+- **"automates diagnosis"**  -  never
+- **"replaces the clinician"**  -  Psygil does not replace; it streamlines
+- **"prevents premature conclusions"**  -  softer: **keeps decisions in your hands**
+- **"stops the AI from..."**  -  reframe: **keeps you in charge of...**
 
 Also still banned from CLAUDE.md: em dashes, curly quotes, and marketing vocabulary (leverage, utilize, facilitate, seamless, cutting-edge, best-in-class, next-generation, unlock, empower).
 

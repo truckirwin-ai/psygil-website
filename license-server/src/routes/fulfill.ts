@@ -15,7 +15,7 @@ const app = new Hono<{ Bindings: Env }>();
  * Returns: { tier, tokens, installers, portal_url }
  *
  * This is the endpoint that powers "buy now, get license immediately on the success
- * page" — no email required to start using the app.
+ * page"  -  no email required to start using the app.
  */
 app.get('/', async (c) => {
   const sessionId = c.req.query('session_id');

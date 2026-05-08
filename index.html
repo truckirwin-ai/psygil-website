@@ -11,6 +11,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://psygil.com/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -21,12 +22,14 @@
 <header class="site-header">
   <div class="container site-header-inner">
     <a class="brand" href="/">
-      <img src="logo.svg" alt="" width="28" height="28">
+      <img class="header-fox" src="assets/icons/CoolFox_circle_512x512.png" alt="" width="36" height="36">
       <span>PSYGIL</span>
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="features.html">Features</a>
+      <a href="compare.html">Compare</a>
       <a href="demo.html">Demo</a>
+      <a href="forensic.html">Forensic</a>
       <a href="enterprise.html">Enterprise</a>
       <a href="download.html">Download</a>
     </nav>
@@ -39,7 +42,10 @@
   <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=80&auto=format&fit=crop" alt="" loading="lazy">
   <div class="hero-bleed-inner">
     <div class="container">
-      <span class="eyebrow">The desk where it happens</span>
+      <div class="hero-eyebrow-row">
+        <span class="eyebrow">The desk where it happens</span>
+        <div class="eyebrow-badge">v1.0 shipping, v1.1 peer review in beta</div>
+      </div>
       <h1>The clinician diagnoses.<br>The record substantiates it.</h1>
 
       <p class="hero-lede">Psygil is a local-first desktop IDE for clinical and forensic psychological evaluation. Psygil organizes the record data and helps draft documents; the licensed clinician makes every diagnostic decision.</p>
@@ -136,6 +142,37 @@
   </div>
 </section>
 
+<section class="section" id="differentiators">
+  <div class="container">
+    <div class="privacy-callout">
+      <div>
+        <h3>Your case records stay under local control</h3>
+        <p>Every supported model call in Psygil can show the redaction manifest: identifier categories removed, counts recorded, and no raw case file sent to Psygil-operated servers. Other tools offer retention policies. Psygil shows the architecture.</p>
+        <a href="about.html#zero-retention" class="btn btn-secondary">See the architecture</a>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:48px;">
+      <span class="kicker">What Psygil ships</span>
+      <h2>Ten product differences that matter in signed evaluations.</h2>
+      <p>These are the surfaces that make Psygil a forensic evaluation workspace, not just another report generator.</p>
+    </div>
+
+    <div class="differentiator-grid">
+      <article class="differentiator-card"><h4>Gate-Based Workflow</h4><p>Six pipeline stages with enforced advancement gates. The writing assistant waits for your signed diagnostic decisions.</p></article>
+      <article class="differentiator-card"><h4>UNID Redaction</h4><p>HIPAA Safe Harbor identifiers are redacted into Universal Non-Identifying Descriptors on the workstation before supported model calls.</p></article>
+      <article class="differentiator-card"><h4>Tamper-Evident Audit</h4><p>SHA-256 hash-chained audit log. Modifications are detectable and the chain can export for software integrity review.</p></article>
+      <article class="differentiator-card"><h4>Transcript Support</h4><p>Interview transcripts attach to the case record and preserve source language for later review and citation.</p></article>
+      <article class="differentiator-card"><h4>SQLCipher and Keychain</h4><p>Database encrypted at rest with Argon2id-derived keys stored in the operating system credential store.</p></article>
+      <article class="differentiator-card"><h4>Review Assistant</h4><p>Nine-category review covering Daubert and Frye risks, speculative language, source gaps, and diagnostic overreach.</p></article>
+      <article class="differentiator-card"><h4>Forensic Context</h4><p>The same finding reads differently by referral context. Custody, competency, IME, and disability need different framing.</p></article>
+      <article class="differentiator-card"><h4>Peer Review Module</h4><p>Planned v1.1 workflow for redacted review packages, signed responses, paragraph comments, and consensus tracking.</p></article>
+      <article class="differentiator-card"><h4>Discovery-Ready Export</h4><p>Report, audit log, attestation, protocols, transcript, and sources packaged for review when the record is challenged.</p></article>
+      <article class="differentiator-card"><h4>Practice Branding</h4><p>Practice name, logo, tagline, and accent can appear on generated reports and exports.</p></article>
+    </div>
+  </div>
+</section>
+
 <section class="personas">
   <div class="container">
     <div class="section-title">
@@ -157,6 +194,11 @@
         <span class="persona-tag">Teams</span>
         <h3>Group practices</h3>
         <p>Shared templates and batteries, per-clinician audit trail, one style guide across the practice.</p>
+      </article>
+      <article class="persona">
+        <span class="persona-tag">Counsel</span>
+        <h3>Attorneys and IMEs</h3>
+        <p>Your expert's report is reproducible on demand. One package, one integrity hash, no surprises in deposition. <a href="forensic.html">Brief for counsel</a>.</p>
       </article>
     </div>
 
@@ -186,7 +228,7 @@
     <div class="footer-grid">
       <div>
         <a class="brand" href="/">
-          <img src="logo.svg" alt="" width="28" height="28">
+          <img class="footer-fox" src="assets/icons/CoolFox_circle_512x512.png" alt="" width="56" height="56">
           <span>PSYGIL</span>
         </a>
         <p style="margin-top:14px;max-width:320px;">The psychology IDE for clinical and forensic work. Built by Foundry SMB in Colorado, United States.</p>
@@ -195,7 +237,9 @@
         <h5>Product</h5>
         <ul>
           <li><a href="features.html">Features</a></li>
+          <li><a href="compare.html">Compare</a></li>
           <li><a href="demo.html">Demo</a></li>
+          <li><a href="forensic.html">Forensic</a></li>
           <li><a href="enterprise.html">Enterprise</a></li>
           <li><a href="download.html">Download</a></li>
         </ul>

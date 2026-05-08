@@ -30,7 +30,7 @@ Concatenate the three inputs with a `|` separator, hash with SHA-256, hex-encode
   - Swift: `getifaddrs` loop, take the first `AF_LINK` interface whose name starts with `en` and is not loopback
 - **os_build**: major build number, not the full build string
   - Swift: `ProcessInfo.processInfo.operatingSystemVersion.majorVersion` (13 for Ventura, 14 for Sonoma, 15 for Sequoia)
-  - Using the full build string ties the fingerprint to every minor OS patch — bad idea
+  - Using the full build string ties the fingerprint to every minor OS patch  -  bad idea
 
 ### Windows
 
@@ -65,11 +65,11 @@ Concatenate the three inputs with a `|` separator, hash with SHA-256, hex-encode
 When a user replaces their machine and needs to reassign the seat:
 
 1. User opens Settings → Billing in the old app (if still running) or writes to `support@psygil.com`
-2. Support calls `POST /api/admin/rebind` (not implemented yet — implement as a signed admin endpoint)
+2. Support calls `POST /api/admin/rebind` (not implemented yet  -  implement as a signed admin endpoint)
 3. The endpoint clears `device_fingerprint`, `device_label`, and `bound_at` on the seat row
 4. Next `POST /api/license/activate` on the new machine binds cleanly
 
-For the scaffold, rebind is manual support — run the SQL directly. Automate when volume justifies it.
+For the scaffold, rebind is manual support  -  run the SQL directly. Automate when volume justifies it.
 
 ## Implementation stub (TypeScript, for Electron or Tauri)
 

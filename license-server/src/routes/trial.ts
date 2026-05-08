@@ -13,7 +13,7 @@ const app = new Hono<{ Bindings: Env }>();
  *
  * Creates a 10-day trial subscription (no payment required, no Stripe customer).
  * If the email already has an active trial, returns the existing tokens instead
- * of creating a new one — this is the "repeat visitor gets the same key" behavior.
+ * of creating a new one  -  this is the "repeat visitor gets the same key" behavior.
  * If the email already converted to paid, returns an error so the user uses their
  * paid key instead.
  */

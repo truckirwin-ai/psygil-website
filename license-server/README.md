@@ -17,20 +17,20 @@ Fully automated subscription fulfillment for Psygil. Cloudflare Worker + D1 + R2
 
 1. `POST /api/trial/start { email }` creates a `tier='trial'` subscription row with `trial_ends_at = now + TRIAL_DAYS * 86400` and one seat token. The email is idempotent on address: returning to the form with the same email reuses the existing trial.
 2. Activation and refresh treat trials identically to paid except `effectiveStatus` flips to `'expired'` after `trial_ends_at`.
-3. To convert, marketing site calls `POST /api/checkout { tier, convert_from_sub_id }`. The resulting Checkout session carries `metadata.convert_seat_sub_id`. On fulfillment, `reparentSeats` moves the trial's seat rows to the new paid subscription, preserving the existing `device_fingerprint`. The app's next refresh picks up the new tier automatically — the user never re-activates.
+3. To convert, marketing site calls `POST /api/checkout { tier, convert_from_sub_id }`. The resulting Checkout session carries `metadata.convert_seat_sub_id`. On fulfillment, `reparentSeats` moves the trial's seat rows to the new paid subscription, preserving the existing `device_fingerprint`. The app's next refresh picks up the new tier automatically  -  the user never re-activates.
 
 ## Fulfillment plan playbooks
 
 The backend supports all three plans simultaneously. Switching between them is a marketing-site config change (`site-config.json`), not a code change.
 
-### Plan A — Paid-first
+### Plan A  -  Paid-first
 
 - Hero CTA: **Start subscription** → `/pricing.html`
 - Buyer picks tier → `/api/checkout` → Stripe Checkout → `/thanks?session_id=...` → `/api/fulfill` returns `{ tokens, installers, portal_url }` immediately.
 - No trial exposed. Simplest funnel, highest-intent traffic.
 - `site-config.json`: `"offer": "paid_only"`.
 
-### Plan B — Trial-first
+### Plan B  -  Trial-first
 
 - Hero CTA: **Download 10-day trial** → `/download.html`
 - Email form → `/api/trial/start` → returns `{ seat_token, installer_url }` inline; email also sent.
@@ -38,7 +38,7 @@ The backend supports all three plans simultaneously. Switching between them is a
 - Pricing page detects the param and passes `convert_from_sub_id` to `/api/checkout`. After payment, seats reparent; the app keeps working without re-activation.
 - `site-config.json`: `"offer": "trial_first"`.
 
-### Plan C — Hybrid
+### Plan C  -  Hybrid
 
 - Both CTAs on the hero: trial on the left, buy on the right.
 - Same backend. The trial convert path still works end to end.
@@ -168,7 +168,7 @@ Returns `{ "url": "https://checkout.stripe.com/..." }`. Redirect the buyer. When
 
 ### `GET /api/fulfill?session_id=cs_xxx`
 
-Synchronous fulfillment for the `/thanks` page. Idempotent — safe to call before or after the webhook. Returns:
+Synchronous fulfillment for the `/thanks` page. Idempotent  -  safe to call before or after the webhook. Returns:
 
 ```json
 {

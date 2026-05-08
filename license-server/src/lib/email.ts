@@ -81,7 +81,7 @@ export function fulfillmentEmail(args: {
     .join('\n\n');
 
   const billingBlock = isTrial
-    ? 'Upgrade from the app or at https://psygil.com/pricing — the trial seat converts to your paid seat automatically.'
+    ? 'Upgrade from the app or at https://psygil.com/pricing  -  the trial seat converts to your paid seat automatically.'
     : `Manage billing, update card, or cancel: ${args.portal_url}
 
 Cancellations take effect at the end of the current billing period. All sales are final.`;

@@ -1,4 +1,4 @@
-# CLAUDE.md — psygil-website
+# CLAUDE.md  -  psygil-website
 
 Operating context and design brief for every Claude session working on this repo.
 Treat this file as always-applied guidance. Read it before any design or copy change.
@@ -7,7 +7,7 @@ Treat this file as always-applied guidance. Read it before any design or copy ch
 
 ## Project
 
-Marketing site for **Psygil**, a forensic psychology IDE. Audience is licensed clinicians, forensic practices, and expert witnesses. The product promise is that **the clinician diagnoses, always** — AI agents read records, organize evidence, and draft language, but never render a diagnosis or sign a report. The site exists to make that distinction legible in 10 seconds and defensible under any review.
+Marketing site for **Psygil**, a forensic psychology IDE. Audience is licensed clinicians, forensic practices, and expert witnesses. The product promise is that **the clinician diagnoses, always**  -  AI agents read records, organize evidence, and draft language, but never render a diagnosis or sign a report. The site exists to make that distinction legible in 10 seconds and defensible under any review.
 
 Pages: `index.html`, `features.html`, `demo.html`, `pricing.html`, `enterprise.html`, `download.html`, `about.html`, `support.html`, `sales.html`, `contact.html`, `policies.html`. Static HTML/CSS, no build step. Deployed to Cloudflare Pages via GitHub push (`main` branch).
 
@@ -35,7 +35,7 @@ Tokens live in `styles.css` at `:root`. Do not re-theme without explicit instruc
 - Text: `#1f2328` (--text), `#57606a` (--text-secondary).
 - Border: `#d0d7de`, strong `#8c959f`.
 - Typography: Inter for body (400/500/600/700), JetBrains Mono for data/eyebrow labels.
-- Shadows: three tiers — `--shadow-sm`, `--shadow-md`, `--shadow-lg`.
+- Shadows: three tiers  -  `--shadow-sm`, `--shadow-md`, `--shadow-lg`.
 - Radius: `--radius`, `--radius-lg`.
 
 Pipeline stage cards, price cards, feature cards, `.screenshot` mockups, and `.evidence-mock` all already reference these tokens. Additions should reuse them, not introduce new colors.
@@ -49,15 +49,15 @@ This section synthesizes the design skill sources the operator has installed at 
 ### 1. Intent over decoration (frontend-design skill, Anthropic)
 
 - Pick a clear aesthetic direction and execute with precision. Bold maximalism and refined minimalism both work; AI-generic middle-ground does not.
-- Avoid overused fonts (Arial, Roboto, generic Inter without intent) and clichéd color schemes (purple-on-white gradients, cookie-cutter gradient-mesh hero). Psygil's current direction is **restrained, editorial, instrument-like** — read as "surgical tool," not "SaaS template."
+- Avoid overused fonts (Arial, Roboto, generic Inter without intent) and clichéd color schemes (purple-on-white gradients, cookie-cutter gradient-mesh hero). Psygil's current direction is **restrained, editorial, instrument-like**  -  read as "surgical tool," not "SaaS template."
 - Typography pairing should be deliberate. Current pairing is Inter + JetBrains Mono; the mono face is the characterful voice and is used for eyebrow labels, numeric data, stage numbers, and anything that should read as a captured record.
 - Motion lives in high-impact moments (hover reveals on the pipeline, tooltip enters, the gate-card emphasis on Diagnostics). Do not scatter micro-animations everywhere.
 - Depth comes from shadow tiers, not decorative gradients or excess borders.
 
 ### 2. Craft-level interaction details (Emil Kowalski tradition)
 
-- Transitions in the 150–250ms band, with eases that feel tactile (`cubic-bezier(0.22, 1, 0.36, 1)` for enters; shorter `ease-out` for exits).
-- Hover states should acknowledge the cursor, not redraw the card. Prefer a 2–4px `translateY(-)` with a shadow tier bump.
+- Transitions in the 150-250ms band, with eases that feel tactile (`cubic-bezier(0.22, 1, 0.36, 1)` for enters; shorter `ease-out` for exits).
+- Hover states should acknowledge the cursor, not redraw the card. Prefer a 2-4px `translateY(-)` with a shadow tier bump.
 - Focus states must be visible for keyboard users (current `:focus-within` rule on pipeline tooltips is the right pattern).
 - Never animate layout-shifting properties; stick to transform, opacity, filter, background-color.
 - Small details compound: caret on tooltip, consistent stroke-width on SVG icons, identical border-radius across surfaces. Drift is visible.
@@ -73,12 +73,12 @@ This section synthesizes the design skill sources the operator has installed at 
 
 - Semantic token names (`--accent`, `--text`, `--border`) over literal colors. We already follow this; keep doing it.
 - Base-8 spacing scale: 4, 8, 12, 16, 24, 32, 48, 64. Avoid 10, 14, 18, 22 unless there is a typographic reason (we use 22px hero padding-top intentionally).
-- Radius system: buttons, chips, and small cards at 4–6px; panels and screenshots at 8–10px; nothing fully rounded except pills.
+- Radius system: buttons, chips, and small cards at 4-6px; panels and screenshots at 8-10px; nothing fully rounded except pills.
 - Keyboard and screen-reader parity: every interactive element reachable by tab, every icon either labeled or `aria-hidden="true"`.
 
 ### 5. Industry-fit reasoning (UI UX Pro Max tradition)
 
-- Psygil's product type is **court-grade forensic software**. The design mood should read as *instrument, record, ledger* — never as *consumer app* or *lifestyle brand*.
+- Psygil's product type is **court-grade forensic software**. The design mood should read as *instrument, record, ledger*  -  never as *consumer app* or *lifestyle brand*.
 - Anti-patterns for this context: cartoon illustrations, stock photography, testimonial carousels with headshots (until we have real attributable clinicians), emoji in copy, gamification, progress bars celebrating AI doing the work.
 - Preferred patterns: data tables, mono-spaced numeric readouts, labeled field grids, timestamp stamps, signed-record motifs (hash strings, attestation blocks), courtroom-adjacent typography (the JetBrains Mono eyebrow labels lean this way).
 
@@ -132,11 +132,11 @@ When the operator asks for a design or copy change:
 
 ## Design sources referenced
 
-- Anthropic `frontend-design` skill — installed at `~/.claude/skills/frontend-design/SKILL.md`.
-- `nextlevelbuilder/ui-ux-pro-max-skill` — summary incorporated above; full skill at https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.
-- Emil Kowalski — https://emilkowal.ski (public interaction-design writing; not fetchable from Claude's sandbox).
-- Impeccable — https://impeccable.style (not fetchable from Claude's sandbox).
-- shadcn/ui — https://ui.shadcn.com/docs/skills (not fetchable from Claude's sandbox).
-- UI-Skills — https://www.ui-skills.com/skills/{interaction-design,interface-design,web-design-guidelines} (not fetchable from Claude's sandbox).
+- Anthropic `frontend-design` skill  -  installed at `~/.claude/skills/frontend-design/SKILL.md`.
+- `nextlevelbuilder/ui-ux-pro-max-skill`  -  summary incorporated above; full skill at https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.
+- Emil Kowalski  -  https://emilkowal.ski (public interaction-design writing; not fetchable from Claude's sandbox).
+- Impeccable  -  https://impeccable.style (not fetchable from Claude's sandbox).
+- shadcn/ui  -  https://ui.shadcn.com/docs/skills (not fetchable from Claude's sandbox).
+- UI-Skills  -  https://www.ui-skills.com/skills/{interaction-design,interface-design,web-design-guidelines} (not fetchable from Claude's sandbox).
 
 For the fetch-blocked sources, paste the relevant skill content into `DESIGN_PRINCIPLES.md` in this repo and Claude will merge it into this file on next session.

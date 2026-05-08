@@ -19,7 +19,7 @@ const app = new Hono<{ Bindings: Env }>();
  *
  * Called by the desktop app in the background. If the underlying seat was reparented
  * to a paid subscription during a trial conversion, this endpoint reflects the new
- * tier automatically — no re-activation needed on the client.
+ * tier automatically  -  no re-activation needed on the client.
  */
 app.post('/', async (c) => {
   const body = await c.req.json<{ jwt: string; device_fingerprint: string }>().catch(() => null);

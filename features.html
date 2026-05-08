@@ -17,12 +17,14 @@
 <header class="site-header">
   <div class="container site-header-inner">
     <a class="brand" href="/">
-      <img src="logo.svg" alt="" width="28" height="28">
+      <img class="header-fox" src="assets/icons/CoolFox_circle_512x512.png" alt="" width="36" height="36">
       <span>PSYGIL</span>
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="features.html" class="active">Features</a>
+      <a href="compare.html">Compare</a>
       <a href="demo.html">Demo</a>
+      <a href="forensic.html">Forensic</a>
       <a href="enterprise.html">Enterprise</a>
       <a href="download.html">Download</a>
     </nav>
@@ -37,9 +39,12 @@
     <a href="#interview">Interview</a>
     <a href="#editor">Editor</a>
     <a href="#writer">Writer</a>
+    <a href="#peer-review">Peer Review</a>
+    <a href="#psychometrician">Psychometrician</a>
     <a href="#privacy">Privacy</a>
     <a href="#attestation">Attestation</a>
     <a href="#discovery">Discovery</a>
+    <a href="#catalog">Catalog</a>
   </div>
 </nav>
 
@@ -130,7 +135,10 @@
         <span class="kicker">Testing and validity</span>
         <h3>You pick the tests. You score the tests. Psygil keeps the record.</h3>
         <p>Clinical battery (MMPI-3, PAI, WAIS-IV, BDI-II, MoCA) and forensic instruments (TOMM, MSVT, PCL-R, ECST-R, MacCAT-CA, HCR-20, Static-99R). Psygil does not score from answer sheets.</p>
+        <p>Psygil v1.0 ships with twelve forensic and clinical score-entry workflows. v1.1 expands to forty-three instruments with normative context across forensic, neuropsychological, trauma, and ADHD/Autism batteries. Full inventory in the <a href="#catalog">Feature Catalog</a>.</p>
         <p>Validity scales flag automatically. F-r, FBS-r, symptom-validity cutoffs, PAI inconsistency indices. Findings feed the evidence map next to your interview and collateral.</p>
+        <h4>Charts that read the way clinicians read</h4>
+        <p>Each instrument shows a normative visualization tuned to how the instrument is interpreted. MMPI-3 renders clinical-scale curves. PAI shows elevation profiles. WAIS-V shows percentile bands across index scores. TOMM and MSVT render cutoff thresholds. Validity flags color the chart when thresholds fire.</p>
       </div>
       <div class="feature-visual">
         <div class="evidence-mock" style="font-size:0.82rem;">
@@ -230,6 +238,42 @@
       </div>
     </div>
 
+    <div class="feature-row reverse" id="peer-review" style="margin-top: 64px;">
+      <div>
+        <span class="kicker">Coming in v1.1, beta now</span>
+        <h3>The peer consult you always meant to do, structured.</h3>
+        <p>Export a redacted review package. A trusted colleague imports it into their own Psygil instance, leaves paragraph-anchored comments with severity grades, records consensus or dissent, and exports a signed response.</p>
+        <p>You import their response, resolve each comment to consensus or override with attestation, and the entire exchange is written to the audit trail. No inboxes. No shared drives. No raw case record in transit.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="evidence-mock">
+          <div style="color:var(--text);font-weight:600;margin-bottom:10px;">Peer review package</div>
+          <div class="dx"><span>Reviewer</span><span class="pill active">signed</span></div>
+          <div class="dx"><span>Paragraph comments</span><span>8</span></div>
+          <div class="dx"><span>Consensus items</span><span>6 resolved</span></div>
+          <div class="dx"><span>Audit status</span><span class="pill active">recorded</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-row" id="psychometrician" style="margin-top: 64px;">
+      <div>
+        <span class="kicker">Coming in v1.1</span>
+        <h3>The scoring specialist that never skips a validity check.</h3>
+        <p>Between Testing and Diagnostics, a dedicated psychometrician assistant reviews every score, surfaces validity concerns, interprets against normative context, and produces an evidence-grade brief that your diagnostic workflow can cite.</p>
+        <p>Diagnostics cannot advance until the score review is complete. You still pick the tests, enter the scores, and decide what the pattern means.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="evidence-mock">
+          <div style="color:var(--text);font-weight:600;margin-bottom:10px;">Score review</div>
+          <div><span class="code">F-r</span> T = 82, validity concern</div>
+          <div><span class="code">TOMM</span> Trial 2 = pass</div>
+          <div><span class="code">PAI</span> ICN = acceptable</div>
+          <div style="margin-top:12px;color:var(--accent-muted);">Brief ready for Diagnostics.</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -247,7 +291,7 @@
         <div class="evidence-mock" style="font-size:0.8rem;">
           <div style="color:var(--text);font-weight:600;margin-bottom:10px;">UNID redaction</div>
           <div style="color:var(--text-secondary);margin-bottom:8px;">Source</div>
-          <div style="color:var(--text);background:var(--bg);padding:8px 10px;border-radius:4px;border:1px solid var(--border);margin-bottom:12px;">Jane Doe, DOB 1987-03-12, 415-555-0143, MRN 447231.</div>
+          <div style="color:var(--text);background:var(--bg);padding:8px 10px;border-radius:4px;border:1px solid var(--border);margin-bottom:12px;">[patient name], DOB [date], [phone], MRN [record id].</div>
           <div style="color:var(--text-secondary);margin-bottom:8px;">Sent to model</div>
           <div style="color:var(--text);background:var(--bg);padding:8px 10px;border-radius:4px;border:1px solid var(--border);">[PERSON_1], DOB [DATE_1], [PHONE_1], MRN [ID_1].</div>
           <div style="margin-top:14px;font-size:0.72rem;color:var(--accent-muted);">
@@ -307,6 +351,25 @@
       <p>The testimony package exports as a single zip: final report, integrity hash, chronological audit log, attestation record, raw test protocols, interview transcript, and every source document cited. One file, reconstructable on discovery, readable by opposing counsel's expert.</p>
     </div>
 
+    <div class="feature-row" id="catalog" style="margin-top: 64px;">
+      <div>
+        <span class="kicker">Feature Catalog</span>
+        <h3>Assessment library expansion.</h3>
+        <p>Psygil v1.0 focuses on the score-entry and evidence-record surface. v1.1 expands the instrument catalog and adds chart metadata so the testing record reads with the same clinical structure you use in practice.</p>
+      </div>
+      <div class="feature-visual">
+        <table class="mock-table" aria-label="Feature catalog">
+          <thead><tr><th>Group</th><th>v1.0</th><th>v1.1 target</th></tr></thead>
+          <tbody>
+            <tr><td>Forensic</td><td>TOMM, MSVT, PCL-R</td><td>ECST-R, MacCAT-CA, HCR-20v3, Static-99R</td></tr>
+            <tr><td>Clinical</td><td>MMPI-3, PAI, BDI-II, MoCA</td><td>Expanded mood, trauma, and personality context</td></tr>
+            <tr><td>Neuropsych</td><td>WAIS-IV score entry</td><td>WAIS-V, WMS-IV, D-KEFS, CVLT-3, Trails</td></tr>
+            <tr><td>ADHD/Autism</td><td>Template foundation</td><td>Conners-4, CAARS, ADOS-2, SCQ, RAADS-14</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -339,7 +402,7 @@
     <div class="footer-grid">
       <div>
         <a class="brand" href="/">
-          <img src="logo.svg" alt="" width="28" height="28">
+          <img class="footer-fox" src="assets/icons/CoolFox_circle_512x512.png" alt="" width="56" height="56">
           <span>PSYGIL</span>
         </a>
         <p style="margin-top:14px;max-width:320px;">The psychology IDE for clinical and forensic work. Built by Foundry SMB in Colorado, United States.</p>
@@ -348,7 +411,9 @@
         <h5>Product</h5>
         <ul>
           <li><a href="features.html">Features</a></li>
+          <li><a href="compare.html">Compare</a></li>
           <li><a href="demo.html">Demo</a></li>
+          <li><a href="forensic.html">Forensic</a></li>
           <li><a href="enterprise.html">Enterprise</a></li>
           <li><a href="download.html">Download</a></li>
         </ul>
