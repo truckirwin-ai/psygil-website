@@ -123,20 +123,28 @@ code {
   width: 28px;
   height: 28px;
 }
-.site-header .brand img.header-fox {
+.site-header .brand img.header-boreas {
   width: 36px;
   height: 36px;
   border-radius: 10px;
+}
+.brand .brand-wordmark {
+  width: auto;
+  height: 28px;
+  display: block;
 }
 .site-footer .brand {
   align-items: center;
   gap: 14px;
 }
-.site-footer .brand img.footer-fox {
+.site-footer .brand img.footer-boreas {
   width: 56px;
   height: 56px;
   border-radius: 16px;
   box-shadow: var(--shadow-sm);
+}
+.site-footer .brand .brand-wordmark {
+  height: 34px;
 }
 .brand:hover { color: var(--text); }
 

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Boreas mountain mark">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eef6ff"/>
+      <stop offset="100%" stop-color="#dcecff"/>
+    </linearGradient>
+    <linearGradient id="layer1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8fc0f2"/>
+      <stop offset="100%" stop-color="#6faae8"/>
+    </linearGradient>
+    <linearGradient id="layer2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6c9fe0"/>
+      <stop offset="100%" stop-color="#4f7fcb"/>
+    </linearGradient>
+    <linearGradient id="layer3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3f67b7"/>
+      <stop offset="100%" stop-color="#254a98"/>
+    </linearGradient>
+    <linearGradient id="layer4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#20458f"/>
+      <stop offset="100%" stop-color="#0f2d73"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#sky)"/>
+  <path d="M48 300C78 278 106 268 132 256C163 241 176 204 211 198C233 194 252 210 269 221C289 233 303 244 327 245C353 246 372 234 391 226C412 217 428 203 464 184V512H48Z" fill="url(#layer1)"/>
+  <path d="M0 362C43 330 82 328 118 316C151 305 176 277 213 273C248 269 273 291 307 303C339 314 368 314 396 303C425 291 453 276 512 268V512H0Z" fill="url(#layer2)"/>
+  <path d="M0 411C38 392 74 379 111 371C143 364 176 373 208 375C239 377 266 366 297 359C330 351 355 354 386 363C413 370 445 378 512 366V512H0Z" fill="url(#layer3)"/>
+  <path d="M0 452C41 434 78 423 112 418C146 413 176 423 214 434C243 442 278 442 311 432C341 423 368 415 398 413C432 410 465 418 512 432V512H0Z" fill="url(#layer4)"/>
+</svg>
