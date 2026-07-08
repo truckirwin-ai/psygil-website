@@ -86,7 +86,7 @@ Format:
   B) Both live. Psygil runs a parallel self-serve SaaS track on purpose. The queue is valid; the real issue is split founder bandwidth. Trade-off: keeps two go-to-markets and the daily stall continues.
   C) Still deciding. Park all four under this single parent and stop surfacing them individually until this resolves. Trade-off: removes the daily noise without committing.
 **Recommended:** A. The evidence is one-directional: the plan is named the source of truth, it deprecated cold email for this exact list, it moved the first legal gate to the employment agreement, and it made discovery warm. The founder voted with the June 11 pivot; the state files never got the memo.
-**Status:** open (11 business days; surfaced 2026-06-22, carried to 2026-06-23/24/25/26, weekend-skipped 06-27/28, carried to 2026-06-29/30/07-01/07-02, holiday+weekend-skipped 07-03/04/05, carried to 2026-07-06 and 2026-07-07 with no ruling)
+**Status:** open (12 business days; surfaced 2026-06-22, carried to 2026-06-23/24/25/26, weekend-skipped 06-27/28, carried to 2026-06-29/30/07-01/07-02, holiday+weekend-skipped 07-03/04/05, carried to 2026-07-06/07-07/07-08 with no ruling)
 
 ---
 
