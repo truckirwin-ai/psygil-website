@@ -1,0 +1,34 @@
+# Retired site. Every page now answers at vesperpsych.com.
+#
+# Cloudflare Pages runs Functions before it consults this file, so the live
+# endpoints under /api/* and /download/* keep working. They are listed here as
+# 200 passthroughs anyway, so the intent survives if that precedence ever
+# changes. Removing them would put Stripe webhooks and existing customers'
+# download links behind a 301, which POST requests do not follow.
+/api/*              /api/:splat               200
+/download/*         /download/:splat          200
+
+# Pages that have a direct counterpart on the new site.
+/policies.html      https://vesperpsych.com/legal.html        301
+/policies           https://vesperpsych.com/legal.html        301
+/features.html      https://vesperpsych.com/how-it-works.html 301
+/features           https://vesperpsych.com/how-it-works.html 301
+/demo.html          https://vesperpsych.com/how-it-works.html 301
+/demo               https://vesperpsych.com/how-it-works.html 301
+/compare.html       https://vesperpsych.com/compare.html      301
+/compare-v2.html    https://vesperpsych.com/compare.html      301
+/compare            https://vesperpsych.com/compare.html      301
+/download.html      https://vesperpsych.com/pricing.html      301
+/enterprise.html    https://vesperpsych.com/pricing.html      301
+/enterprise         https://vesperpsych.com/pricing.html      301
+/about.html         https://vesperpsych.com/about.html        301
+/clinical.html      https://vesperpsych.com/about.html        301
+/forensic.html      https://vesperpsych.com/about.html        301
+/contact.html       https://vesperpsych.com/about.html#contact 301
+/sales.html         https://vesperpsych.com/about.html#contact 301
+/support.html       https://vesperpsych.com/support.html      301
+/feedback.html      https://vesperpsych.com/support.html      301
+/thanks.html        https://vesperpsych.com/                  301
+
+# Everything else, including the home page.
+/*                  https://vesperpsych.com/                  301
